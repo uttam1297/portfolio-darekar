@@ -1,0 +1,13 @@
+Build me a personal link page with the following:
+
+Name: Uttam Darekar
+
+Bio: Product Analyst based in Berlin.
+
+Social links (displayed as icons):
+
+Email: 12uttamdarekar@gmail.com (mailto:12uttamdarekar@gmail.com)
+
+Linkedln: https://www.linkedin.com/in/uttam-darekar/
+
+Modern, clean, responsive design.

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Content — Uttam Darekar</title>
+    <link rel="icon" href="page_icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Ambient blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <!-- Nav -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html#hero" class="nav-logo">UD</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">← Back to Page</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="edit-page">
+        <h1>Add Content</h1>
+        <p class="subtitle">Fill in the details below. Your content will be saved locally and appear on your page.</p>
+
+        <!-- Section selector -->
+        <div class="form-section">
+            <h2>Choose Section</h2>
+            <div class="form-group">
+                <label for="sectionSelect">Section</label>
+                <select id="sectionSelect"
+                    style="width:100%;padding:0.65rem 0.85rem;font-family:var(--font);font-size:0.88rem;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:0.6rem;outline:none;">
+                    <option value="projects">Projects</option>
+                    <option value="case-studies">Case Studies</option>
+                    <option value="blogs">Blogs</option>
+                    <option value="achievements">Achievements</option>
+                    <option value="hobbies">Hobbies</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="form-section">
+            <h2>Details</h2>
+            <div class="form-group">
+                <label for="itemTitle">Title</label>
+                <input type="text" id="itemTitle" placeholder="e.g. Built a real-time dashboard for…" />
+            </div>
+            <div class="form-group">
+                <label for="itemTag">Tag / Category <span
+                        style="color:var(--muted);font-weight:400;">(optional)</span></label>
+                <input type="text" id="itemTag" placeholder="e.g. Data Engineering, Personal, Award" />
+            </div>
+            <div class="form-group">
+                <label for="itemDescription">Description</label>
+                <textarea id="itemDescription" placeholder="Write a brief description…"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="itemLink">Link <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+                <input type="text" id="itemLink" placeholder="https://…" />
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-primary" id="saveBtn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Save Item
+                </button>
+                <button class="btn btn-secondary" id="clearBtn">Clear</button>
+            </div>
+        </div>
+
+        <!-- Saved items preview -->
+        <div class="form-section">
+            <h2>Saved Items</h2>
+            <div id="savedItemsList" class="saved-items">
+                <p style="color:var(--muted);font-size:0.85rem;">No items saved yet. Add your first one above!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ============================================================
+           Edit page — localStorage-based content manager
+           ============================================================ */
+
+        const STORAGE_KEY = 'uttam_page_content';
+
+        function getItems() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch { return []; }
+        }
+
+        function saveItems(items) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        }
+
+        function renderList() {
+            const items = getItems();
+            const list = document.getElementById('savedItemsList');
+
+            if (!items.length) {
+                list.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;">No items saved yet. Add your first one above!</p>';
+                return;
+            }
+
+            list.innerHTML = items.map((item, i) => `
+        <div class="saved-item">
+          <div class="saved-item-content">
+            <h4>${escapeHtml(item.title)} <span style="color:var(--accent);font-size:0.7rem;font-weight:500;margin-left:0.4rem;">${escapeHtml(item.section)}</span></h4>
+            ${item.tag ? `<span style="font-size:0.72rem;color:var(--accent2);">${escapeHtml(item.tag)}</span>` : ''}
+            <p>${escapeHtml(item.description)}</p>
+            ${item.link ? `<a href="${escapeHtml(item.link)}" target="_blank" style="font-size:0.78rem;color:var(--accent);text-decoration:underline;">${escapeHtml(item.link)}</a>` : ''}
+          </div>
+          <button class="delete-btn" onclick="deleteItem(${i})" aria-label="Delete">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      `).join('');
+        }
+
+        function deleteItem(index) {
+            const items = getItems();
+            items.splice(index, 1);
+            saveItems(items);
+            renderList();
+            updateMainPage();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text || '';
+            return div.innerHTML;
+        }
+
+        function updateMainPage() {
+            // Since this is a separate page, the main page reads from localStorage on load.
+            // No cross-page push needed; index.html will pick up changes on next visit.
+        }
+
+        // Auto-select section from hash
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            const select = document.getElementById('sectionSelect');
+            if (select) {
+                const option = select.querySelector(`option[value="${hash}"]`);
+                if (option) select.value = hash;
+            }
+        }
+
+        // Save
+        document.getElementById('saveBtn').addEventListener('click', () => {
+            const title = document.getElementById('itemTitle').value.trim();
+            const description = document.getElementById('itemDescription').value.trim();
+
+            if (!title) { alert('Please enter a title.'); return; }
+
+            const items = getItems();
+            items.push({
+                section: document.getElementById('sectionSelect').value,
+                title,
+                tag: document.getElementById('itemTag').value.trim(),
+                description,
+                link: document.getElementById('itemLink').value.trim(),
+                createdAt: new Date().toISOString()
+            });
+
+            saveItems(items);
+            renderList();
+
+            // Clear form
+            document.getElementById('itemTitle').value = '';
+            document.getElementById('itemTag').value = '';
+            document.getElementById('itemDescription').value = '';
+            document.getElementById('itemLink').value = '';
+        });
+
+        // Clear
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            document.getElementById('itemTitle').value = '';
+            document.getElementById('itemTag').value = '';
+            document.getElementById('itemDescription').value = '';
+            document.getElementById('itemLink').value = '';
+        });
+
+        // Initial render
+        renderList();
+
+        // Nav scroll shadow
+        const nav = document.getElementById('nav');
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 20);
+            }, { passive: true });
+        }
+    </script>
+</body>
+
+</html>
