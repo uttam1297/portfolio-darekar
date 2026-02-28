@@ -238,10 +238,15 @@ body {
 }
 
 .layout-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+    max-height: calc(100vh - var(--nav-h) - 3rem);
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-right: 0.25rem;
+    -ms-overflow-style: none;
 }
+.layout-left::-webkit-scrollbar { display: none; }
 
 .layout-right {
     display: flex;
@@ -814,3 +819,408 @@ body {
 .saved-item .delete-btn:hover {
     color: #ef4444;
 }
+/* ============================================================
+   ADMIN / ROLE-BASED VISIBILITY
+   ============================================================ */
+.admin-only {
+    display: none !important;
+}
+body.is-admin .admin-only {
+    display: flex !important;
+}
+body.is-admin section.admin-only {
+    display: block !important;
+}
+body.is-admin .nav-link.admin-only {
+    display: block !important;
+}
+
+/* ============================================================
+   OVERVIEW & KPI TILES
+   ============================================================ */
+.overview-section {
+    margin-bottom: 2.5rem;
+}
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.kpi-tile {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+.kpi-tile:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+.kpi-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 0.2rem;
+}
+.kpi-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   EXPERIENCE ACCORDION & LAYOUT
+   ============================================================ */
+.timeline-header {
+    margin-bottom: 0.75rem;
+}
+.impact-summary {
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.tools-line {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+}
+
+/* Accordion details styling */
+.timeline-accordion {
+    margin-top: 1.5rem;
+}
+.timeline-accordion summary {
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    padding: 0.75rem;
+    outline: none;
+    user-select: none;
+    text-align: center;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+}
+.timeline-accordion summary:hover {
+    border-color: var(--accent);
+    background: rgba(124, 92, 252, 0.04);
+}
+.timeline-accordion summary::marker,
+.timeline-accordion summary::-webkit-details-marker {
+    display: none;
+}
+.accordion-content {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.chip-sub {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+/* ============================================================
+   PROOF OF SKILLS
+   ============================================================ */
+.right-desktop-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+}
+@media (min-width: 900px) {
+    .right-desktop-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 3rem;
+    }
+}
+.proof-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+.proof-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.proof-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+.proof-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+}
+.proof-card p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+/* ============================================================
+   CASE STUDIES & MODALS
+   ============================================================ */
+.cs-university {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+.cs-bullets {
+    font-size: 0.83rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    padding-left: 1.2rem;
+    line-height: 1.5;
+}
+.case-study-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    display: inline-flex;
+}
+
+/* Dialog Reset */
+dialog {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+dialog[open] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.modal {
+    margin: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    padding: 2.5rem;
+    max-width: 650px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    outline: none;
+    backdrop-filter: blur(10px);
+}
+.modal::backdrop {
+    background: rgba(14, 14, 17, 0.85);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+dialog[open]::backdrop {
+    opacity: 1;
+}
+.modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: var(--accent);
+}
+.modal h2 {
+    font-size: 1.45rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+.modal-org {
+    color: var(--accent2);
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+.modal-body h4 {
+    font-size: 0.95rem;
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 0.25rem;
+    display: inline-block;
+}
+.modal-body p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   BENTO GRID (Outside Work)
+   ============================================================ */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media (min-width: 600px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.bento-tile {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.bento-tile:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+.bento-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+.bento-tile h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.bento-tile p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.layout-right {
+    min-width: 0;
+}
+
+/* Tool tags row */
+.tool-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.8rem;
+}
+.tool-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(124, 92, 252, 0.1);
+    border: 1px solid rgba(124, 92, 252, 0.2);
+    color: var(--accent2);
+}
+.timeline-headline {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+}
+
+/* Tabs */
+.tab-row {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem;
+    width: fit-content;
+}
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: var(--font);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.tab-btn.active {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 12px var(--glow);
+}
+.tab-btn:hover:not(.active) {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+}
+.tab-panel {
+    display: none;
+}
+.tab-panel.active {
+    display: block;
+    animation: fadeUp 0.3s ease forwards;
+}
+
+/* Make sure footer is 100% wide at bottom */
+.footer {
+    grid-column: 1 / -1;
+}
+
+/* Projects card grid style missing */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+.content-card--add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 130px;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border-radius: var(--radius);
+}
+.content-card--add:hover {
+    border-color: var(--accent);
+    background: rgba(124, 92, 252, 0.04);
+}
+.add-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    text-decoration: none;
+    color: var(--muted);
+}
+.add-link svg { width: 26px; height: 26px; }
+.content-card--add:hover .add-link { color: var(--accent); }
