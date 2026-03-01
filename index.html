@@ -114,6 +114,23 @@
                         <p class="timeline-org" style="margin-bottom:0;">Acropolis Technical Campus</p>
                     </div>
                 </div>
+                        </section>
+
+            <!-- ===== EDUCATION ===== -->
+            <section class="section" id="education" style="margin-top: 1rem;">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline" style="gap:0.5rem">
+                    <div class="timeline-item" style="padding: 1rem; background: transparent; border: none;">
+                        <span class="timeline-date">Expected Mar 2026</span>
+                        <h3 style="font-size: 0.95rem;">MBA & Engineering</h3>
+                        <p class="timeline-org" style="margin-bottom:0;">HTW Berlin</p>
+                    </div>
+                    <div class="timeline-item" style="padding: 0 1rem 1rem 1rem; background: transparent; border: none; margin-top: -1rem;">
+                        <span class="timeline-date">2016 – 2020</span>
+                        <h3 style="font-size: 0.95rem;">B.Eng. Electronics & Comm.</h3>
+                        <p class="timeline-org" style="margin-bottom:0;">Acropolis Technical Campus</p>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -577,6 +594,23 @@
             })
         })
     </script>
+
+    <!-- Tab switcher logic -->
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                const portfolio = document.getElementById('portfolio');
+
+                portfolio.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                portfolio.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+                btn.classList.add('active');
+                document.getElementById('tab-' + tab).classList.add('active');
+            });
+        });
+    </script>
+
 
     <!-- Tab switcher logic -->
     <script>
