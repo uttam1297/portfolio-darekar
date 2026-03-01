@@ -45,7 +45,7 @@
             <!-- ===== HERO ===== -->
             <section class="hero" id="hero">
                 <div class="avatar-ring">
-                    <img src="profile.png" alt="Uttam Darekar" class="avatar" />
+                    <img src="assets/images/profile.png" alt="Uttam Darekar" class="avatar" />
                 </div>
                 <h1 class="hero-name">Uttam Darekar</h1>
 
@@ -98,34 +98,16 @@
                 </div>
             </section>
 
-            <!-- ===== EDUCATION ===== -->
             <section class="section" id="education" style="margin-top: 1rem;">
                 <h2 class="section-title">Education</h2>
                 <div class="timeline" style="gap:0.5rem">
                     <div class="timeline-item" style="padding: 1rem; background: transparent; border: none;">
                         <span class="timeline-date">Expected Mar 2026</span>
-                        <h3 style="font-size: 0.95rem;">MBA & Engineering</h3>
+                        <h3 style="font-size: 0.95rem;">MBA &amp; Engineering</h3>
                         <p class="timeline-org" style="margin-bottom:0;">HTW Berlin</p>
                     </div>
                     <div class="timeline-item"
                         style="padding: 0 1rem 1rem 1rem; background: transparent; border: none; margin-top: -1rem;">
-                        <span class="timeline-date">2016 – 2020</span>
-                        <h3 style="font-size: 0.95rem;">B.Eng. Electronics & Comm.</h3>
-                        <p class="timeline-org" style="margin-bottom:0;">Acropolis Technical Campus</p>
-                    </div>
-                </div>
-                        </section>
-
-            <!-- ===== EDUCATION ===== -->
-            <section class="section" id="education" style="margin-top: 1rem;">
-                <h2 class="section-title">Education</h2>
-                <div class="timeline" style="gap:0.5rem">
-                    <div class="timeline-item" style="padding: 1rem; background: transparent; border: none;">
-                        <span class="timeline-date">Expected Mar 2026</span>
-                        <h3 style="font-size: 0.95rem;">MBA & Engineering</h3>
-                        <p class="timeline-org" style="margin-bottom:0;">HTW Berlin</p>
-                    </div>
-                    <div class="timeline-item" style="padding: 0 1rem 1rem 1rem; background: transparent; border: none; margin-top: -1rem;">
                         <span class="timeline-date">2016 – 2020</span>
                         <h3 style="font-size: 0.95rem;">B.Eng. Electronics & Comm.</h3>
                         <p class="timeline-org" style="margin-bottom:0;">Acropolis Technical Campus</p>
@@ -389,6 +371,14 @@
                 </div>
             </section>
 
+            <!-- ===== CONNECT ===== -->
+            <section class="section" id="connect">
+                <h2 class="section-title">Let&rsquo;s Connect</h2>
+                <p class="hero-summary" style="max-width: 32rem;">
+                    Let&apos;s connect and chat about new AI agents, sports, and how they intersect with data and product.
+                </p>
+            </section>
+
             <!-- ===== BLOGS & ACHIEVEMENTS (Admin only) ===== -->
             <section class="section empty-state admin-only" id="blogs">
                 <h2 class="section-title">Blogs</h2>
@@ -611,21 +601,24 @@
         });
     </script>
 
-
-    <!-- Tab switcher logic -->
+    <!-- Mobile scroll blur for background blobs -->
     <script>
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tab = btn.dataset.tab;
-                const portfolio = document.getElementById('portfolio');
+        (function () {
+            const MOBILE_MAX = 900;
 
-                portfolio.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                portfolio.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            function updateBlur() {
+                const isMobile = window.innerWidth <= MOBILE_MAX;
+                if (isMobile && window.scrollY > 10) {
+                    document.body.classList.add('scroll-blur');
+                } else {
+                    document.body.classList.remove('scroll-blur');
+                }
+            }
 
-                btn.classList.add('active');
-                document.getElementById('tab-' + tab).classList.add('active');
-            });
-        });
+            window.addEventListener('scroll', updateBlur, { passive: true });
+            window.addEventListener('resize', updateBlur);
+            updateBlur();
+        })();
     </script>
 
 </body>
