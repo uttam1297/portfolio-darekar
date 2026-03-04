@@ -43,34 +43,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Helper for KPI count-up
-  function startCount(el) {
+  // --- ANIME.JS ANIMATIONS ---
+
+  // 1. Hero Entrance Sequence
+  const heroTl = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 1000
+  });
+
+  heroTl
+    .add({
+      targets: '.avatar-ring',
+      scale: [0.5, 1],
+      opacity: [0, 1],
+      duration: 1200,
+      easing: 'easeOutElastic(1, .8)'
+    })
+    .add({
+      targets: '.hero-name',
+      translateY: [20, 0],
+      opacity: [0, 1],
+      offset: '-=800'
+    })
+    .add({
+      targets: '.hero-summary',
+      translateY: [20, 0],
+      opacity: [0, 1],
+      offset: '-=700'
+    })
+    .add({
+      targets: '.hero-tagline',
+      translateY: [20, 0],
+      opacity: [0, 1],
+      offset: '-=700'
+    })
+    .add({
+      targets: '.social-pill',
+      translateY: [10, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(100),
+      offset: '-=600'
+    })
+    .add({
+      targets: '.hero-cv-btn',
+      scale: [0.9, 1],
+      opacity: [0, 1],
+      offset: '-=500'
+    });
+
+  // 2. Avatar subtle float
+  anime({
+    targets: '.avatar',
+    translateY: [-5, 5],
+    duration: 3000,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine'
+  });
+
+  // 3. KPI Count-up with anime.js
+  function startKpiAnimation(el) {
     if (!el || el.dataset.counted === 'true') return;
+    el.dataset.counted = 'true';
 
     const target = parseFloat(el.getAttribute('data-target') || '0');
     const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1200;
-    const startTime = performance.now();
 
-    el.dataset.counted = 'true';
-
-    function tick(now) {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const value = Math.floor(progress * target);
-      el.textContent = `${value}${suffix}`;
-
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      } else {
-        el.textContent = `${target}${suffix}`;
+    const obj = { value: 0 };
+    anime({
+      targets: obj,
+      value: target,
+      round: 1,
+      easing: 'easeOutExpo',
+      duration: 2000,
+      update: function () {
+        el.innerHTML = obj.value + suffix;
       }
-    }
-
-    requestAnimationFrame(tick);
+    });
   }
 
+  // 4. Intersection Observer for Scroll Animations
   const sectionIds = [
-    'hero',
     'experience',
     'skills',
     'certifications',
@@ -81,78 +134,76 @@ document.addEventListener('DOMContentLoaded', () => {
     'connect',
   ];
 
-  const sections = sectionIds
-    .map((id) => document.getElementById(id))
-    .filter(Boolean);
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-  const navLinks = document.querySelectorAll('.nav-link');
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
 
-  if ('IntersectionObserver' in window) {
-    // Active nav link on scroll
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = entry.target.id;
-          navLinks.forEach((link) => {
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
+        // Animate section title
+        const title = entry.target.querySelector('.section-title');
+        if (title && !title.dataset.animated) {
+          title.dataset.animated = 'true';
+          anime({
+            targets: title,
+            translateX: [-20, 0],
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeOutExpo'
           });
-        });
-      },
-      {
-        rootMargin: '-40% 0px -55% 0px',
-        threshold: 0.15,
-      }
-    );
-
-    sections.forEach((section) => sectionObserver.observe(section));
-
-    // Fade-in on scroll for cards
-    const fadeEls = document.querySelectorAll('.scroll-fade');
-    const fadeObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    fadeEls.forEach((el) => fadeObserver.observe(el));
-
-    // KPI count-up when stats bar comes into view
-    const kpiBar = document.querySelector('.kpi-bar');
-    const kpiNums = document.querySelectorAll('.kpi-num[data-target]');
-
-    if (kpiBar && kpiNums.length) {
-      const kpiObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            kpiNums.forEach((el) => startCount(el));
-            observer.disconnect();
-          });
-        },
-        {
-          threshold: 0.4,
         }
-      );
 
-      kpiObserver.observe(kpiBar);
-    }
-  } else {
-    // Basic fallback: show fade elements immediately
-    document.querySelectorAll('.scroll-fade').forEach((el) => {
-      el.classList.add('in-view');
+        // Specific animations per section
+        if (id === 'hero') {
+          // Already handled by initial timeline
+        } else if (entry.target.classList.contains('section')) {
+          // Animate children items (timeline items, cards, etc.)
+          const items = entry.target.querySelectorAll('.timeline-item, .content-card, .cert-card, .proof-card, .bento-tile, .testimonial-card');
+          if (items.length > 0 && !entry.target.dataset.itemsAnimated) {
+            entry.target.dataset.itemsAnimated = 'true';
+            anime({
+              targets: items,
+              translateY: [30, 0],
+              opacity: [0, 1],
+              delay: anime.stagger(100),
+              duration: 800,
+              easing: 'easeOutExpo'
+            });
+          }
+        }
+
+        // Special case for KPI bar
+        if (entry.target.querySelector('.kpi-bar')) {
+          const kpiNums = entry.target.querySelectorAll('.kpi-num[data-target]');
+          kpiNums.forEach(num => startKpiAnimation(num));
+        }
+      }
     });
-  }
+  }, observerOptions);
+
+  // Observe all sections
+  document.querySelectorAll('section, .hero').forEach(s => scrollObserver.observe(s));
+
+  // 5. Active Nav Link on Scroll
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.15 });
+
+  sections.forEach(s => navObserver.observe(s));
 });
+
 
