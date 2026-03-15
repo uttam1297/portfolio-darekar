@@ -714,23 +714,61 @@ body {
     opacity: 0.6;
 }
 
-/* Initial states for anime.js animations */
+/* ============================================================
+   FADE-IN ANIMATION
+   ============================================================ */
 .hero,
-.section,
-.timeline-item,
-.content-card,
-.cert-card,
-.proof-card,
-.bento-tile,
-.testimonial-card,
-.section-title,
-.social-pill,
-.hero-name,
-.hero-summary,
-.hero-tagline,
-.hero-cv-btn,
-.avatar-ring {
+.section {
     opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.7s ease forwards;
+}
+
+.hero {
+    animation-delay: 0.1s;
+}
+
+.section:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+.section:nth-of-type(2) {
+    animation-delay: 0.3s;
+}
+
+.section:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+.section:nth-of-type(4) {
+    animation-delay: 0.5s;
+}
+
+.section:nth-of-type(5) {
+    animation-delay: 0.6s;
+}
+
+.section:nth-of-type(6) {
+    animation-delay: 0.65s;
+}
+
+.section:nth-of-type(7) {
+    animation-delay: 0.7s;
+}
+
+.section:nth-of-type(8) {
+    animation-delay: 0.75s;
+}
+
+.section:nth-of-type(9) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
