@@ -12,14 +12,14 @@
 }
 
 :root {
-    --bg: #0e0e11;
-    --surface: #16161a;
+    --bg: #111315;
+    --surface: #1a1c20;
     --border: rgba(255, 255, 255, 0.06);
-    --text: #ececf1;
-    --muted: #8b8b9e;
-    --accent: #7c5cfc;
-    --accent2: #c084fc;
-    --glow: rgba(124, 92, 252, 0.35);
+    --text: #f0f4f8;
+    --muted: #8b95a1;
+    --accent: #5c728a;
+    --accent2: #8da3bb;
+    --glow: rgba(92, 114, 138, 0.25);
     --radius: 1rem;
     --font: 'Outfit', system-ui, -apple-system, sans-serif;
     --nav-h: 56px;
@@ -72,7 +72,7 @@ body {
 .blob-3 {
     width: 260px;
     height: 260px;
-    background: #38bdf8;
+    background: #3e4a59;
     top: 50%;
     left: 40%;
     animation-delay: -14s;
