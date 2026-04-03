@@ -19,6 +19,8 @@
     --muted: #8b95a1;
     --accent: #5c728a;
     --accent2: #8da3bb;
+    --accent-teal: #14b8a6;
+    --accent-amber: #f59e0b;
     --glow: rgba(92, 114, 138, 0.25);
     --radius: 1rem;
     --font: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -63,7 +65,7 @@ body {
 .blob-2 {
     width: 340px;
     height: 340px;
-    background: var(--accent2);
+    background: var(--accent-teal);
     bottom: 10%;
     right: -5%;
     animation-delay: -7s;
@@ -72,7 +74,7 @@ body {
 .blob-3 {
     width: 260px;
     height: 260px;
-    background: #3e4a59;
+    background: var(--accent-amber);
     top: 50%;
     left: 40%;
     animation-delay: -14s;
@@ -422,8 +424,8 @@ body {
 }
 
 .timeline-item:hover {
-    border-color: rgba(124, 92, 252, 0.3);
-    box-shadow: 0 4px 24px rgba(124, 92, 252, 0.08);
+    border-color: rgba(20, 184, 166, 0.3);
+    box-shadow: 0 4px 24px rgba(20, 184, 166, 0.08);
 }
 
 .timeline-date {
@@ -498,13 +500,13 @@ body {
 }
 
 .chip--accent {
-    background: rgba(124, 92, 252, 0.1);
-    border-color: rgba(124, 92, 252, 0.25);
+    background: rgba(20, 184, 166, 0.1);
+    border-color: rgba(20, 184, 166, 0.25);
     color: var(--accent2);
 }
 
 .chip--accent:hover {
-    background: rgba(124, 92, 252, 0.2);
+    background: rgba(20, 184, 166, 0.2);
     border-color: var(--accent);
 }
 
@@ -526,8 +528,8 @@ body {
 }
 
 .content-card:hover {
-    border-color: rgba(124, 92, 252, 0.3);
-    box-shadow: 0 4px 24px rgba(124, 92, 252, 0.08);
+    border-color: rgba(20, 184, 166, 0.3);
+    box-shadow: 0 4px 24px rgba(20, 184, 166, 0.08);
     transform: translateY(-2px);
 }
 
@@ -538,7 +540,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--accent);
-    background: rgba(124, 92, 252, 0.12);
+    background: rgba(20, 184, 166, 0.12);
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
     margin-bottom: 0.6rem;
@@ -580,8 +582,8 @@ body {
 
 .cert-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(124, 92, 252, 0.4);
-    box-shadow: 0 10px 32px rgba(124, 92, 252, 0.25);
+    border-color: rgba(20, 184, 166, 0.4);
+    box-shadow: 0 10px 32px rgba(20, 184, 166, 0.25);
 }
 
 .cert-platform {
@@ -630,7 +632,7 @@ body {
 
 .content-card--add:hover {
     border-color: var(--accent);
-    background: rgba(124, 92, 252, 0.04);
+    background: rgba(20, 184, 166, 0.04);
 }
 
 .add-link {
@@ -961,7 +963,7 @@ body.is-admin .nav-link.admin-only {
     padding: 0.75rem;
     border-radius: calc(var(--radius) + 0.25rem);
     background:
-        radial-gradient(circle at top left, rgba(124, 92, 252, 0.18), transparent 60%),
+        radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 60%),
         radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.14), transparent 55%);
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -1042,7 +1044,7 @@ body.is-admin .nav-link.admin-only {
 }
 .timeline-accordion summary:hover {
     border-color: var(--accent);
-    background: rgba(124, 92, 252, 0.04);
+    background: rgba(20, 184, 166, 0.04);
 }
 .timeline-accordion summary::marker,
 .timeline-accordion summary::-webkit-details-marker {
@@ -1167,8 +1169,8 @@ body.is-admin .nav-link.admin-only {
 }
 
 .tool-category--product {
-    background: linear-gradient(135deg, rgba(124, 92, 252, 0.12), rgba(15, 23, 42, 0.96));
-    border-color: rgba(124, 92, 252, 0.35);
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(15, 23, 42, 0.96));
+    border-color: rgba(20, 184, 166, 0.35);
 }
 
 .tool-category--productivity {
@@ -1405,8 +1407,8 @@ dialog[open]::backdrop {
     font-weight: 500;
     padding: 0.2rem 0.55rem;
     border-radius: 999px;
-    background: rgba(124, 92, 252, 0.1);
-    border: 1px solid rgba(124, 92, 252, 0.2);
+    background: rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(20, 184, 166, 0.2);
     color: var(--accent2);
 }
 .timeline-headline {
@@ -1480,7 +1482,7 @@ dialog[open]::backdrop {
 }
 .content-card--add:hover {
     border-color: var(--accent);
-    background: rgba(124, 92, 252, 0.04);
+    background: rgba(20, 184, 166, 0.04);
 }
 .add-link {
     display: flex;
