@@ -34,7 +34,7 @@ edu_section = """            </section>
                 <h2 class="section-title">Education</h2>
                 <div class="timeline" style="gap:0.5rem">
                     <div class="timeline-item" style="padding: 1rem; background: transparent; border: none;">
-                        <span class="timeline-date">Expected Mar 2026</span>
+                        <span class="timeline-date">Expected Jun 2026</span>
                         <h3 style="font-size: 0.95rem;">MBA & Engineering</h3>
                         <p class="timeline-org" style="margin-bottom:0;">HTW Berlin</p>
                     </div>
