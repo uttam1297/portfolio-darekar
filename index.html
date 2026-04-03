@@ -4,844 +4,529 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uttam Darekar — Product Analyst | Breaking into PM</title>
-    <meta name="description" content="Uttam Darekar — Product Analyst breaking into PM, based in Berlin, Germany." />
+    <title>Uttam Darekar — Aspiring PM · Berlin</title>
+    <meta name="description" content="Uttam Darekar — Product Analyst breaking into PM. Based in Berlin." />
     <link rel="icon" href="page_icon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=5" />
 </head>
 
 <body>
 
-    <!-- Ambient blobs -->
-    <div class="bg-blob blob-1"></div>
-    <div class="bg-blob blob-2"></div>
-    <div class="bg-blob blob-3"></div>
-
-    <!-- ===== STICKY HEADER NAV ===== -->
+    <!-- NAV -->
     <header class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">UD</a>
+            <a href="#top" class="nav-logo">UD</a>
             <nav class="nav-links" id="navLinks">
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Work</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#outside-work" class="nav-link">Outside Work</a>
+                <a href="#capabilities" class="nav-link">About</a>
+                <a href="#connect" class="nav-link">Connect</a>
             </nav>
-
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <main class="page page-grid">
+    <div class="page" id="top">
 
-        <div class="layout-left">
-            <!-- ===== HERO ===== -->
-            <section class="hero" id="hero">
-                <div class="avatar-ring">
-                    <img src="assets/images/profile.png" alt="Uttam Darekar" class="avatar" />
+        <!-- ============ LEFT SIDEBAR ============ -->
+        <aside class="col-left">
+            <div class="avatar-wrap">
+                <img src="assets/images/profile.png" alt="Uttam" class="avatar" />
+            </div>
+
+            <h1 class="name">Uttam Darekar</h1>
+            <p class="title">Product Analyst · Aspiring PM</p>
+            <p class="location">📍 Berlin, Germany</p>
+
+            <p class="tagline">
+                I find user problems in data, turn them into product decisions, and ship things that matter.
+            </p>
+
+            <div class="kpi-grid">
+                <div class="kpi-tile">
+                    <div class="kpi-num">1M+</div>
+                    <div class="kpi-label">Users Impacted</div>
                 </div>
-                <h1 class="hero-name">Uttam Darekar</h1>
-
-                <div class="overview-section">
-                    <!-- <p class="hero-summary" style="margin-bottom: 0.5rem; color: var(--text);">
-                        I bridge data engineering and product thinking to build analytics that teams actually trust
-                            and act on.
-                    </p> -->
-                    <p class="hero-summary" style="margin-bottom: 1rem;">
-                        I find user problems in data, turn them into product decisions, and work with engineering teams
-                        to ship solutions that move the needle.
-                    </p>
-                    <p class="hero-tagline" style="margin-bottom: 0.5rem;">Product Analyst | Breaking into PM</p>
-                    <p class="hero-tagline" style="margin-bottom: 1.5rem;">Berlin, Germany</p>
-
-                    <!-- <div class="kpi-bar">
-                        <div class="kpi-tile">
-                            <span class="kpi-num" data-target="3" data-suffix="+">3+</span>
-                            <span class="kpi-label">Products Shaped</span>
-                        </div>
-                        <div class="kpi-tile">
-                            <span class="kpi-num" data-target="35" data-suffix="%">35%</span>
-                            <span class="kpi-label">Analyst Work Eliminated</span>
-                        </div>
-                        <div class="kpi-tile">
-                            <span class="kpi-num" data-target="2" data-suffix="">2</span>
-                            <span class="kpi-label">PRDs Written</span>
-                        </div>
-                        <div class="kpi-tile">
-                            <span class="kpi-num" data-target="1" data-suffix="M+">1M+</span>
-                            <span class="kpi-label">Users Impacted</span>
-                        </div>
-                    </div> -->
+                <div class="kpi-tile">
+                    <div class="kpi-num">4+</div>
+                    <div class="kpi-label">Years Exp.</div>
                 </div>
-
-                <div class="social-row" style="margin-top:2rem">
-                    <a href="mailto:12uttamdarekar@gmail.com" class="social-pill" aria-label="Email">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                        </svg>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/uttam-darekar/" target="_blank" rel="noopener"
-                        class="social-pill" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 10.268h-3v-4.5c0-1.074-.021-2.455-1.496-2.455-1.498 0-1.727 1.17-1.727 2.378v4.577h-3v-9h2.881v1.233h.041c.401-.762 1.379-1.566 2.839-1.566 3.036 0 3.595 2 3.595 4.6v4.733z" />
-                        </svg>
-                        <span>LinkedIn</span>
-                    </a>
-
+                <div class="kpi-tile">
+                    <div class="kpi-num">4</div>
+                    <div class="kpi-label">PRDs Written</div>
                 </div>
-            </section>
+                <div class="kpi-tile">
+                    <div class="kpi-num">35%</div>
+                    <div class="kpi-label">Work Eliminated</div>
+                </div>
+            </div>
 
-            <section class="section" id="education" style="margin-top: 1rem;">
-                <h2 class="section-title">Education</h2>
-                <div class="timeline" style="gap:0.5rem">
-                    <div class="timeline-item" style="padding: 1rem; background: transparent; border: none;">
-                        <span class="timeline-date">Expected Jun 2026</span>
-                        <h3 style="font-size: 0.95rem;">MBA &amp; Engineering</h3>
-                        <p class="timeline-org" style="margin-bottom:0;">HTW Berlin</p>
+            <div class="social-row">
+                <a href="mailto:12uttamdarekar@gmail.com" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    12uttamdarekar@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/uttam-darekar/" target="_blank" rel="noopener" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 10.268h-3v-4.5c0-1.074-.021-2.455-1.496-2.455-1.498 0-1.727 1.17-1.727 2.378v4.577h-3v-9h2.881v1.233h.041c.401-.762 1.379-1.566 2.839-1.566 3.036 0 3.595 2 3.595 4.6v4.733z" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="sidebar-label">Education</p>
+                <div class="edu-item">
+                    <div class="edu-degree">MBA &amp; Engineering</div>
+                    <div class="edu-school">HTW Berlin</div>
+                    <div class="edu-date">Expected Jun 2026</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-degree">B.Eng. Electronics &amp; Comm.</div>
+                    <div class="edu-school">Acropolis Technical Campus</div>
+                    <div class="edu-date">2016 – 2020</div>
+                </div>
+            </div>
+
+            <div class="certs-bar">
+                <p class="certs-label">Certifications</p>
+                <div class="certs-pills">
+                    <span class="cert-pill">IBM AI Product Manager</span>
+                    <span class="cert-pill">Google BI</span>
+                    <span class="cert-pill">Google Data Analytics</span>
+                    <span class="cert-pill">Agile Product Dev.</span>
+                    <span class="cert-pill">PM Foundation</span>
+                    <span class="cert-pill">AI Evaluations</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ============ RIGHT CONTENT ============ -->
+        <div class="col-right">
+
+            <!-- EXPERIENCE -->
+            <section class="section fade-up" id="experience">
+                <p class="sec-label">Experience</p>
+                <div class="xp-list">
+
+                    <!-- Heartbeat -->
+                    <div class="xp-card">
+                        <div class="xp-top">
+                            <span class="xp-company">Heartbeat AI (1KOMMA5°)</span>
+                            <span class="xp-date">Jul 2025 – Present</span>
+                        </div>
+                        <p class="xp-role">Product Analyst (Working Student) · Berlin</p>
+                        <p class="xp-impact">Shipped a data quality dashboard, built LLM incident workflows, contributed
+                            to roadmap across 3+ markets.</p>
+                        <ul class="xp-bullets">
+                            <li>Defined problem, scoped and shipped SQLMesh + BigQuery dashboard — single view for
+                                customer-impacting fixes.</li>
+                            <li>Built LLM-assisted incident workflow with Incident.io — surfacing root causes for
+                                engineering teams.</li>
+                            <li>Synthesised KPI trends and stakeholder feedback into roadmap recommendations.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">Roadmap</span>
+                            <span class="tag">LLM Workflows</span>
+                            <span class="tag">User Stories</span>
+                            <span class="tag">Incident Mgmt</span>
+                        </div>
                     </div>
-                    <div class="timeline-item"
-                        style="padding: 0 1rem 1rem 1rem; background: transparent; border: none; margin-top: -1rem;">
-                        <span class="timeline-date">2016 – 2020</span>
-                        <h3 style="font-size: 0.95rem;">B.Eng. Electronics & Comm.</h3>
-                        <p class="timeline-org" style="margin-bottom:0;">Acropolis Technical Campus</p>
-                    </div>
-                </div>
-            </section>
-        </div>
 
-        <div class="layout-right">
-            <!-- ===== EXPERIENCE ===== -->
-            <!-- Strict descending order: Present, Mar 2025, Sep 2024, Sep 2021 -->
-            <section class="section" id="experience">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-
-                    <div class="timeline-item expanded">
-                        <div class="timeline-header">
-                            <span class="timeline-date">Jul 2025 – Present</span>
-                            <h3>Product Analyst (Working Student)</h3>
-                            <p class="timeline-org">Heartbeat AI GmbH (1KOMMA5°) · Berlin</p>
+                    <!-- Meyer Werft -->
+                    <div class="xp-card">
+                        <div class="xp-top">
+                            <span class="xp-company">Meyer Werft (Disney Cruise)</span>
+                            <span class="xp-date">Feb – Mar 2025</span>
                         </div>
-                        <div class="timeline-body">
-                            <p class="timeline-headline">Identified user-facing product gaps through data, built
-                                monitoring workflows to surface issues early, and drove resolution across product,
-                                engineering, and operations teams across 3+ European markets.</p>
-                            <ul>
-                                <li>Defined the problem, scoped the solution, and shipped a data quality dashboard using
-                                    SQLMesh and BigQuery giving teams a single explainable view to prioritise
-                                    high-impact fixes affecting real customers.</li>
-                                <li>Designed alert logic using historical error-rate data and statistical thresholds,
-                                    reducing manual monitoring effort and improving early detection of
-                                    customer-impacting
-                                    pipeline failures.</li>
-                                <li>Built an LLM-assisted incident workflow integrated with Incident.io surfacing
-                                    recommended next steps, relevant logs, and failing validation context to improve
-                                    root-cause analysis speed for internal teams.</li>
-                                <li>Introduced AI agent faithfulness scoring to assess whether automated responses used
-                                    correct tools and skills directly improving reliability of the agent for end
-                                    users.</li>
+                        <p class="xp-role">Project Management Intern · Wismar</p>
+                        <p class="xp-impact">Reduced decision cycle time by 20% across 20+ engineering &amp; logistics
+                            teams.</p>
+                        <ul class="xp-bullets">
+                            <li>Managed milestone tracking and structured reporting during a complex delivery phase.
+                            </li>
+                            <li>Proactively surfaced blockers before they became delays.</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag">Stakeholder Mgmt</span>
+                            <span class="tag">Delivery</span>
+                            <span class="tag">Cross-functional</span>
+                        </div>
+                    </div>
+
+                    <!-- Show older -->
+                    <button class="show-more-btn" id="showMoreBtn">Show earlier experience ↓</button>
+                    <div class="hidden-xp" id="hiddenXp">
+                        <!-- Infosys -->
+                        <div class="xp-card">
+                            <div class="xp-top">
+                                <span class="xp-company">Infosys · ULTA Beauty</span>
+                                <span class="xp-date">Nov 2021 – Sep 2024</span>
+                            </div>
+                            <p class="xp-role">Product Analyst · Bengaluru</p>
+                            <p class="xp-impact">Client-engineering interface for a loyalty platform serving 1M+
+                                customers — from requirements to release.</p>
+                            <ul class="xp-bullets">
+                                <li>Translated customer pain points and behaviour data into product recommendations and
+                                    sprint specs.</li>
+                                <li>Coordinated engineering and QA — owned release quality and defect resolution.</li>
+                                <li>Automated reporting, eliminating 35% of manual analyst work.</li>
                             </ul>
-                            <div class="tool-row">
-                                <span class="tool-tag">Product Discovery</span>
-                                <span class="tool-tag">Incident Management</span>
-                                <span class="tool-tag">LLM Workflows</span>
-                                <span class="tool-tag">Data Quality</span>
-                                <span class="tool-tag">Stakeholder Alignment</span>
+                            <div class="tag-row">
+                                <span class="tag">Requirements</span>
+                                <span class="tag">UAT</span>
+                                <span class="tag">Agile</span>
+                                <span class="tag">Customer Insights</span>
                             </div>
+                        </div>
+                        <!-- Abacus -->
+                        <div class="xp-card">
+                            <div class="xp-top">
+                                <span class="xp-company">Abacus Consultancy</span>
+                                <span class="xp-date">Oct 2020 – Sep 2021</span>
+                            </div>
+                            <p class="xp-role">System Engineer · Indore</p>
+                            <p class="xp-impact">Translated client requirements into technical docs; reduced response
+                                time by 20%.</p>
                         </div>
                     </div>
 
-                    <div class="timeline-item expanded">
-                        <div class="timeline-header">
-                            <span class="timeline-date">Feb – Mar 2025</span>
-                            <h3>Project Management Intern</h3>
-                            <p class="timeline-org">Meyer Werft (Disney Cruise Ship Project) · Wismar</p>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="timeline-headline">Reduced decision cycle time by 20% by orchestrating visibility
-                                for
-                                20+ teams.</p>
-                            <ul>
-                                <li>Orchestrated milestone tracking and delivery visibility for cross-functional
-                                    engineering & logistics teams.</li>
-                                <li>Identified and resolved deployment bottlenecks to keep project timelines on track.
-                                </li>
-                                <li>Facilitated seamless collaboration across multiple operational departments.</li>
-                            </ul>
-                            <div class="tool-row">
-                                <span class="tool-tag">Milestone Tracking</span>
-                                <span class="tool-tag">Process Optimization</span>
-                                <span class="tool-tag">Stakeholder Reporting</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <details class="timeline-accordion">
-                        <summary>Show earlier experience (2 roles)</summary>
-                        <div class="accordion-content">
-                            <div class="timeline-item">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">Nov 2021 – Sep 2024</span>
-                                    <h3>Product Analyst</h3>
-                                    <p class="timeline-org">Infosys Ltd (ULTA Beauty Loyalty Program) · Bengaluru</p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="timeline-headline">Acted as the interface between enterprise clients and
-                                        engineering teams on a loyalty platform serving 1M+ customers — translating
-                                        user behaviour insights into product recommendations, sprint backlogs, and
-                                        release-ready specifications.</p>
-                                    <ul>
-                                        <li>Analysed customer pain points, loyalty usage patterns, and engagement trends
-                                            — translated findings into clear product recommendations for stakeholder
-                                            teams ahead of peak retail periods.</li>
-                                        <li>Translated customer behaviour insights into offers, reward structures, and
-                                            point allocation logic bridging the gap between data signals and
-                                            actionable product decisions.</li>
-                                        <li>Translated business requirements into functional specifications and
-                                            sprint-ready work items, coordinating with engineering and QA to support
-                                            structured execution and release quality.</li>
-                                    </ul>
-                                    <div class="tool-row">
-                                        <span class="tool-tag">User Research</span>
-                                        <span class="tool-tag">Requirements Definition</span>
-                                        <span class="tool-tag">Agile Delivery</span>
-                                        <span class="tool-tag">Customer Insights</span>
-                                        <span class="tool-tag">Stakeholder Reporting</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">Oct 2020 – Sep 2021</span>
-                                    <h3>System Engineer</h3>
-                                    <p class="timeline-org">Abacus Consultancy Services · Indore</p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="timeline-headline">Reduced deployment delays by 25% by designing scalable
-                                        backend services for order tracking.</p>
-                                    <ul>
-                                        <li>Designed scalable backend services for real-time order tracking,
-                                            accelerating deployment cycles.</li>
-                                        <li>Translated client requirements into technical documentation, bridging
-                                            business needs and engineering execution.</li>
-                                    </ul>
-                                    <div class="tool-row">
-                                        <span class="tool-tag">Backend Services</span>
-                                        <span class="tool-tag">Technical
-                                            Documentation</span>
-                                        <span class="tool-tag">Requirements Parsing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </details>
                 </div>
             </section>
 
-            <!-- ===== PROOF OF SKILLS & TOOLS ===== -->
-            <section class="section" id="skills">
-                <h2 class="section-title">PM Capabilities</h2>
-                <div class="proof-list">
-                    <div class="proof-card">
-                        <h4>User Problems → Product Decisions</h4>
-                        <p>Identified gaps through data and translated findings into structured user stories, acceptance
-                            criteria, and prioritised backlogs</p>
-                    </div>
-                    <div class="proof-card">
-                        <h4>Roadmap & Prioritisation</h4>
-                        <p>Synthesised KPI trends, stakeholder feedback, and market signals into evidence-based
-                            recommendations for product leadership</p>
-                    </div>
-                    <div class="proof-card">
-                        <h4>End-to-End Delivery</h4>
-                        <p>Accompanied features from discovery through release requirements, UAT, stakeholder
-                            sign-off, and post-launch tracking</p>
-                    </div>
-                    <div class="proof-card">
-                        <h4>AI-Native Product Thinking</h4>
-                        <p>Designed and shipped LLM-powered workflows; wrote PRDs for AI features with real user
-                            problems, personas, metrics, and trade-offs</p>
-                    </div>
-                    <div class="proof-card">
-                        <h4>AI &amp; Agent Workflows</h4>
-                        <p>I design autonomous agent loops by defining clear tool boundaries, edge cases, and
-                            human-in-the-loop fallback states. I focus on rigorous evaluation logic, like faithfulness
-                            scoring, to transition agents from fragile demos to reliable, production-ready workflows.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="tool-stack">
-                    <h3 class="tool-stack-heading">Tools &amp; Stack</h3>
-                    <div class="tool-stack-grid">
-                        <article class="tool-category-card tool-category--data scroll-fade">
-                            <h4>Data &amp; Analytics</h4>
-                            <div class="tool-badges">
-                                <span class="tool-badge">🗄️ SQL</span>
-                                <span class="tool-badge">🔍 BigQuery</span>
-                                <span class="tool-badge">📊 Power BI</span>
-                                <span class="tool-badge">👁️ Looker</span>
-                                <span class="tool-badge">📈 Google Analytics</span>
-                                <span class="tool-badge">🐕 Datadog</span>
-                                <span class="tool-badge">🐍 Python</span>
-                                <span class="tool-badge">🔧 dbt</span>
-                            </div>
-                        </article>
-                        <article class="tool-category-card tool-category--product scroll-fade">
-                            <h4>Product &amp; Planning</h4>
-                            <div class="tool-badges">
-                                <span class="tool-badge">🎯 Jira</span>
-                                <span class="tool-badge">📐 Linear</span>
-                                <span class="tool-badge">📚 Confluence</span>
-                                <span class="tool-badge">🎨 Figma</span>
-                                <span class="tool-badge">🧩 Miro</span>
-                                <span class="tool-badge">📝 Notion</span>
-                                <span class="tool-badge">🐙 GitHub</span>
-                            </div>
-                        </article>
-                        <article class="tool-category-card tool-category--productivity scroll-fade">
-                            <h4>AI &amp; Automation</h4>
-                            <div class="tool-badges">
-                                <span class="tool-badge">🤖 Claude Code</span>
-                                <span class="tool-badge">⚡ Cursor</span>
-                                <span class="tool-badge">🔗 LLM Workflows</span>
-                                <span class="tool-badge">💬 ChatGPT</span>
-                                <span class="tool-badge">🐍 Python</span>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===== CERTIFICATIONS ===== -->
-            <section class="section" id="certifications">
-                <h2 class="section-title">Certifications</h2>
-                <div class="cert-grid">
-                    <article class="cert-card scroll-fade">
-                        <div class="cert-platform">
-                            <span class="cert-badge cert-badge--coursera">Coursera</span>
-                        </div>
-                        <h3 class="cert-title">IBM AI Product Manager</h3>
-                        <p class="cert-platform-name">Issued by IBM · Coursera</p>
-                    </article>
-                    <article class="cert-card scroll-fade">
-                        <div class="cert-platform">
-                            <span class="cert-badge cert-badge--coursera">Coursera</span>
-                        </div>
-                        <h3 class="cert-title">Google Business Intelligence</h3>
-                        <p class="cert-platform-name">Issued by Google · Coursera</p>
-                    </article>
-                    <article class="cert-card scroll-fade">
-                        <div class="cert-platform">
-                            <span class="cert-badge cert-badge--coursera">Coursera</span>
-                        </div>
-                        <h3 class="cert-title">Google Data Analytics</h3>
-                        <p class="cert-platform-name">Issued by Google · Coursera</p>
-                    </article>
-                    <article class="cert-card scroll-fade">
-                        <div class="cert-platform">
-                            <span class="cert-badge cert-badge--linkedin">LinkedIn Learning</span>
-                        </div>
-                        <h3 class="cert-title">Agile Product Development</h3>
-                        <p class="cert-platform-name">Issued by LinkedIn Learning</p>
-                    </article>
-                    <article class="cert-card scroll-fade">
-                        <div class="cert-platform">
-                            <span class="cert-badge cert-badge--linkedin">LinkedIn Learning</span>
-                        </div>
-                        <h3 class="cert-title">Project Management Foundation</h3>
-                        <p class="cert-platform-name">Issued by LinkedIn Learning</p>
-                    </article>
-                    <article class="cert-card scroll-fade">
-                        <div class="cert-platform">
-                            <span class="cert-badge cert-badge--linkedin">LinkedIn Learning</span>
-                        </div>
-                        <h3 class="cert-title">AI Evaluations: Foundations</h3>
-                        <p class="cert-platform-name">Issued by LinkedIn Learning</p>
-                    </article>
-                </div>
-            </section>
-
-            <!-- ===== PROJECTS ===== -->
-
-            <!-- ===== PORTFOLIO ===== -->
-            <section class="section" id="portfolio">
-                <h2 class="section-title">Portfolio</h2>
-
-                <p class="hero-summary"
-                    style="max-width: 40rem; margin-bottom: 1rem; font-size: 0.85rem; color: var(--muted);">
-                    These are scenario-based case studies to demonstrate how I think about product and analytics in
-                    e-commerce,
-                    quick commerce, and energy tech not confidential work from past employers.
-                </p>
-
+            <!-- PORTFOLIO -->
+            <section class="section fade-up" id="portfolio">
+                <p class="sec-label">Portfolio</p>
                 <div class="tab-row">
                     <button class="tab-btn active" data-tab="projects">Projects</button>
                     <button class="tab-btn" data-tab="case-studies">Case Studies</button>
                 </div>
 
+                <!-- Projects -->
                 <div class="tab-panel active" id="tab-projects">
-                    <div class="content-grid" id="projects-grid">
-                        <div class="content-card">
-                            <span class="content-card-tag">In Progress</span>
-                            <h3>DB App — AI Disruption Assistant PRD</h3>
-                            <p>
-                                Full PRD for an AI-powered disruption assistant in the Deutsche Bahn app. Covers persona
-                                definition,
-                                problem evidence,
-                                solution trade-offs, v1 scope, success metrics with targets, risks, and open questions.
-                                Built from a
-                                real personal pain point.
+                    <div class="card-grid">
+                        <!-- Featured PRD -->
+                        <div class="card card-featured">
+                            <span class="card-badge">Full PRD · AI Feature</span>
+                            <h3>DB App — AI Disruption Assistant</h3>
+                            <p>Passengers with cancelled trains have no fast way to find alternatives. I researched the
+                                problem, defined the user, scoped v1, and set success metrics — the full PM artefact.
                             </p>
-                            <p style="margin-top: 0.75rem; font-size: 0.78rem;">
-                                <strong>Tags:</strong> Full PRD | Persona | Success Metrics | AI Features | Trade-offs
-                            </p>
-                            <p style="margin-top: 0.35rem; font-size: 0.78rem;">
-                                <a href="https://chestnut-authority-367.notion.site/DB-App-AI-Alternative-Route-Agent-PRD-336e2a3ae03e80cab154ce7b8ce258fd"
-                                    target="_blank" rel="noopener"
-                                    style="color: var(--accent); text-decoration: underline;">View
-                                    PRD</a>
-                            </p>
+                            <p class="impact-line">Persona · Scope · Metrics · Trade-offs · Risks</p>
+                            <a href="https://chestnut-authority-367.notion.site/DB-App-AI-Alternative-Route-Agent-PRD-336e2a3ae03e80cab154ce7b8ce258fd"
+                                target="_blank" rel="noopener" class="btn-sm">Read the PRD →</a>
                         </div>
-
-                        <div class="content-card">
-                            <span class="content-card-tag">Capstone</span>
-                            <h3>
-                                <a href="https://drive.google.com/drive/folders/1nPMwiAhx39AG0KmSJdHrSjrY9Ksczxr3"
-                                    target="_blank" style="color: inherit; text-decoration: none;">
-                                    KiSure — Anti-Locking System
-                                </a>
-                            </h3>
-                            <ul
-                                style="font-size: 0.83rem; color: var(--muted); margin-top: 0.75rem; padding-left: 1.2rem; line-height: 1.5;">
-                                <li>Led end-to-end product lifecycle from ideation to business planning.</li>
-                                <li>Conducted user research, supported UAT, and validated technical feasibility.</li>
-                                <li>Developed a 5-year GTM strategy and viable financial business model.</li>
-                                <li>Received professor recommendation for exceptional performance and innovation.</li>
-                            </ul>
+                        <!-- KiSure -->
+                        <div class="card">
+                            <span class="card-badge">Capstone</span>
+                            <h3>KiSure — Anti-Locking System</h3>
+                            <p>Led end-to-end product lifecycle. User research, UAT, 5-year GTM strategy.
+                                Professor-recommended.</p>
+                            <a href="https://drive.google.com/drive/folders/1nPMwiAhx39AG0KmSJdHrSjrY9Ksczxr3"
+                                target="_blank" rel="noopener" class="card-link">View Project →</a>
                         </div>
-
-                        <div class="content-card">
-                            <span class="content-card-tag">Building in Public</span>
-                            <h3>OneStop — All-in-One Student Productivity Tool</h3>
-                            <p>
-                                Personal side project. Vision: one place for students to manage calendar, job postings
-                                (via Apify),
-                                Notion workspace, and newsletters. Built with vibe coding. Currently in progress.
-                            </p>
-                            <p style="margin-top: 0.75rem; font-size: 0.78rem;">
-                                <strong>Tags:</strong> Product Vision, Side Project, Automation, Apify
-                            </p>
+                        <!-- OneStop -->
+                        <div class="card">
+                            <span class="card-badge">Side Project</span>
+                            <h3>OneStop — Student Productivity Tool</h3>
+                            <p>One place for students: calendar, job postings via Apify, Notion, newsletters. Currently
+                                iterating.</p>
+                            <div class="pulse-dot"><span class="dot"></span> Active Development</div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Case Studies -->
                 <div class="tab-panel" id="tab-case-studies">
-                    <div class="content-grid case-study-list" id="case-studies-grid">
-
-                        <div class="content-card">
-                            <h3>E-commerce – Increasing AOV with better recommendations</h3>
-                            <p><strong>Context:</strong> Mid-size fashion e-commerce brand where most customers buy a single item then churn.</p>
-                            <p><strong>Problem:</strong> Increase average order value and repeat purchase rate without relying on heavy discounts.</p>
-                            <p><strong>Approach:</strong> Ship a thin-slice in-house recommendation MVP in 3–4 weeks and A/B test it.</p>
-                            <p style="margin-top: 0.75rem; font-size: 0.78rem;">
-                                <button class="cs-view-btn"
-                                    data-title="E-commerce – Increasing AOV with better recommendations"
-                                    data-context="Mid-size fashion e-commerce brand where most customers buy a single item then churn, with no existing recommendation engine."
-                                    data-problem="Increase average order value (AOV) and repeat purchase rate without relying on heavy discounts that erode margins."
-                                    data-approach="Ship a thin-slice in-house recommendation MVP using simple co-occurrence rules and client-side tracking in 3–4 weeks. A/B test it against a no-recommendation control group."
-                                    data-impact="Target +10–20% AOV uplift and +10–15% repeat purchase rate over 3 months if recommendations prove relevant. Secondary win: own the data pipeline for future personalisation."
-                                    data-note="Scenario-based case study demonstrating how I think about e-commerce product strategy and analytics.">View full case study →</button>
-                            </p>
+                    <div class="card-grid">
+                        <!-- E-commerce -->
+                        <div class="card">
+                            <span class="card-badge">E-commerce</span>
+                            <h3>Increasing AOV with Recommendations</h3>
+                            <p><strong>Context:</strong> Fashion brand — most customers buy once then churn.</p>
+                            <p><strong>Problem:</strong> Grow AOV without discounts.</p>
+                            <p><strong>Approach:</strong> Ship thin-slice recommendation MVP in 3–4 weeks, A/B test.</p>
+                            <button class="cs-btn" data-title="E-commerce – Increasing AOV with better recommendations"
+                                data-context="Mid-size fashion brand where most customers buy a single item then churn, with no recommendation engine."
+                                data-problem="Increase average order value and repeat purchase rate without relying on discounts that erode margins."
+                                data-approach="Ship a thin-slice in-house MVP using co-occurrence rules in 3–4 weeks. A/B test against a no-recommendation control group."
+                                data-impact="Target +10–20% AOV uplift and +10–15% repeat purchase rate over 3 months. Secondary: own the data pipeline for future personalisation."
+                                data-note="Scenario-based case study showing how I think about e-commerce product strategy.">View
+                                full case study →</button>
                         </div>
-
-                        <div class="content-card">
-                            <h3>Quick commerce – Promise time vs profitability</h3>
-                            <p><strong>Context:</strong> Quick commerce player promising 10–15 minute grocery delivery in a large metro.</p>
-                            <p><strong>Problem:</strong> Aggressive promise times help conversion but hurt profitability when delivery is late.</p>
-                            <p><strong>Approach:</strong> Use historical delivery data to set dynamic promise times per micro-zone.</p>
-                            <p style="margin-top: 0.75rem; font-size: 0.78rem;">
-                                <button class="cs-view-btn"
-                                    data-title="Quick commerce – Promise time vs profitability"
-                                    data-context="Quick commerce player in a large metro promising 10–15 min grocery delivery. Refunds and SLA misses are rising as volume scales."
-                                    data-problem="Aggressive flat promise times drive conversion but hurt profitability and trust when late deliveries spike during peak hours or bad weather."
-                                    data-approach="Use 6 months of historical delivery data to compute dynamic promise times per micro-zone and time-of-day slot. A/B test dynamic vs static 15-min promise across two districts."
-                                    data-impact="Higher on-time delivery rate, fewer refunds, and clearer levers for dark store placement and rider allocation decisions."
-                                    data-note="Scenario-based case study showing how I balance customer experience and unit economics in quick commerce.">View full case study →</button>
+                        <!-- Quick commerce -->
+                        <div class="card">
+                            <span class="card-badge">Quick Commerce</span>
+                            <h3>Promise Time vs Profitability</h3>
+                            <p><strong>Context:</strong> Player promising 10–15 min grocery delivery in a large metro.
                             </p>
+                            <p><strong>Problem:</strong> Aggressive promises hurt profitability when delivery is late.
+                            </p>
+                            <p><strong>Approach:</strong> Dynamic promise times per micro-zone using historical data.
+                            </p>
+                            <button class="cs-btn" data-title="Quick commerce – Promise time vs profitability"
+                                data-context="Quick commerce player promising 10–15 min grocery delivery. Refunds and SLA misses are rising as volume scales."
+                                data-problem="Flat promise times drive conversion but hurt profitability and trust when late deliveries spike during peak hours."
+                                data-approach="Use 6 months of historical data to compute dynamic promise times per micro-zone and time-of-day. A/B test dynamic vs static 15-min promise."
+                                data-impact="Higher on-time delivery, fewer refunds, clearer levers for dark store placement and rider allocation."
+                                data-note="Scenario-based case study showing how I balance customer experience and unit economics.">View
+                                full case study →</button>
                         </div>
-
-                        <div class="content-card">
-                            <h3>Energy tech – Unifying energy data for better decisions</h3>
-                            <p><strong>Context:</strong> Renewable energy developer with solar &amp; wind assets and fragmented SCADA/market data.</p>
-                            <p><strong>Problem:</strong> Leadership needs a unified, portfolio-level view of performance and risk.</p>
-                            <p><strong>Approach:</strong> Design a cloud-native unified data platform with a simple common data model.</p>
-                            <p style="margin-top: 0.75rem; font-size: 0.78rem;">
-                                <button class="cs-view-btn"
-                                    data-title="Energy tech – Unifying energy data for better decisions"
-                                    data-context="Renewable energy developer with solar &amp; wind assets across regions. Data lives in multiple SCADA systems and market feeds with no unified layer."
-                                    data-problem="Leadership lacks a portfolio-level view of performance and risk. Current reporting is manual, inconsistent, and slow — delaying decisions on asset operations and compliance."
-                                    data-approach="Design a cloud-native unified data platform with a minimal common data model. Deliver the first portfolio dashboards covering production vs forecast, availability, and curtailment metrics."
-                                    data-impact="Faster portfolio decisions, reduced manual reporting overhead, and better regulatory compliance through a single, explainable source of truth."
-                                    data-note="Scenario-based case study showing how I think about energy data products and platform strategy.">View full case study →</button>
+                        <!-- Energy tech -->
+                        <div class="card">
+                            <span class="card-badge">Energy Tech</span>
+                            <h3>Unifying Energy Data for Decisions</h3>
+                            <p><strong>Context:</strong> Renewable energy developer with fragmented SCADA/market data.
                             </p>
+                            <p><strong>Problem:</strong> Leadership lacks a unified portfolio-level view of performance.
+                            </p>
+                            <p><strong>Approach:</strong> Cloud-native unified data platform with a common data model.
+                            </p>
+                            <button class="cs-btn" data-title="Energy tech – Unifying energy data for better decisions"
+                                data-context="Renewable energy developer with solar &amp; wind assets across regions. Data lives in multiple SCADA systems and market feeds with no unified layer."
+                                data-problem="Leadership lacks a portfolio-level view of performance and risk. Manual reporting is inconsistent and slow."
+                                data-approach="Design a cloud-native unified data platform with a minimal common data model. Deliver dashboards covering production vs forecast, availability, and curtailment."
+                                data-impact="Faster portfolio decisions, reduced manual reporting, and better regulatory compliance through a single source of truth."
+                                data-note="Scenario-based case study showing how I think about energy data products.">View
+                                full case study →</button>
                         </div>
-
-                    </div>
-                </div>
-
-                <!-- Case Study Modal -->
-                <div id="cs-modal" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title" style="display:none;">
-                    <div id="cs-modal-backdrop"></div>
-                    <div id="cs-modal-box">
-                        <button id="cs-modal-close" aria-label="Close">&times;</button>
-                        <h2 id="cs-modal-title"></h2>
-                        <dl id="cs-modal-body"></dl>
-                        <p id="cs-modal-note"></p>
                     </div>
                 </div>
             </section>
 
-            <!-- ===== TESTIMONIALS ===== -->
-            <section class="section" id="testimonials">
-                <h2 class="section-title">What People Say</h2>
-                <div class="testimonials-wrapper">
-                    <div class="testimonials-track">
-                        <article class="testimonial-card scroll-fade">
-                            <div class="testimonial-quote-mark">“</div>
-                            <p class="testimonial-text">
-                                Uttam consistently demonstrates exceptional teamwork and a proactive approach in every
-                                project. He is always the first to step up, offering to take on tasks and ensuring
-                                everything runs smoothly. His ability to anticipate needs and act before being asked is
-                                something that sets him apart.
-                            </p>
-                            <p class="testimonial-name">Ann Merin Varghese</p>
-                            <p class="testimonial-meta">IT Operations Engineer · Colleague at Infosys</p>
-                        </article>
-                        <article class="testimonial-card scroll-fade">
-                            <div class="testimonial-quote-mark">“</div>
-                            <p class="testimonial-text">
-                                What stands out most about Uttam is their analytical ability and commitment to
-                                excellence. They consistently demonstrated a remarkable ability to approach academic
-                                challenges with creativity, critical thinking, and strong attention to detail. Their
-                                research skills were particularly impressive.
-                            </p>
-                            <p class="testimonial-name">Maitri Mishra</p>
-                            <p class="testimonial-meta">Academic Peer</p>
-                        </article>
-                        <article class="testimonial-card scroll-fade">
-                            <div class="testimonial-quote-mark">“</div>
-                            <p class="testimonial-text">
-                                What really sets Uttam apart is his ability to see the bigger picture and translate
-                                technical insights into strategic decisions. He brings both passion and precision to the
-                                table.
-                            </p>
-                            <p class="testimonial-name">Anshdha Sharma</p>
-                            <p class="testimonial-meta">Werkstudent @ CARIAD · MBA Peer</p>
-                        </article>
-                        <article class="testimonial-card scroll-fade">
-                            <div class="testimonial-quote-mark">“</div>
-                            <p class="testimonial-text">
-                                Uttam's biggest strength is his ability to deal with conflicting priorities in
-                                high-pressure situations — he never loses his cool. It's without hesitation that I
-                                recommend Uttam if you are looking for the best.
-                            </p>
-                            <p class="testimonial-name">Mohammad Shadman</p>
-                            <p class="testimonial-meta">Senior System Engineer · Infosys</p>
-                        </article>
+            <!-- PM CAPABILITIES -->
+            <section class="section fade-up" id="capabilities">
+                <p class="sec-label">How I Think About Product</p>
+                <div class="caps-grid">
+                    <div class="cap-card">
+                        <div class="cap-icon">🔍</div>
+                        <div class="cap-title">Find the Real Problem</div>
+                        <p class="cap-body">I dig into data to find where users actually struggle — not where
+                            stakeholders assume.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-icon">🗺️</div>
+                        <div class="cap-title">Structure the Solution</div>
+                        <p class="cap-body">User stories, acceptance criteria, scope boundaries. I make ambiguous
+                            problems buildable.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-icon">📊</div>
+                        <div class="cap-title">Measure What Matters</div>
+                        <p class="cap-body">I define success metrics with baselines and targets before building — not
+                            after.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="cap-icon">🤖</div>
+                        <div class="cap-title">AI as a Product Lever</div>
+                        <p class="cap-body">Shipped LLM workflows in production. Wrote PRDs for AI features grounded in
+                            real user problems.</p>
                     </div>
                 </div>
             </section>
 
-
-            <!-- ===== OUTSIDE WORK ===== -->
-            <section class="section" id="outside-work">
-                <h2 class="section-title">Outside Work</h2>
-                <div class="bento-grid">
-                    <div class="bento-tile">
-                        <div class="bento-icon">📷</div>
-                        <h4>Photography</h4>
-                        <p>I train my eye for composition, patterns, and storytelling.</p>
+            <!-- TOOLS -->
+            <section class="section fade-up" id="tools">
+                <p class="sec-label">Tools &amp; Stack</p>
+                <div class="tools-cols">
+                    <div>
+                        <p class="tools-group-label">Product</p>
+                        <div class="tools-tags">
+                            <span class="ttag">Jira</span>
+                            <span class="ttag">Linear</span>
+                            <span class="ttag">Notion</span>
+                            <span class="ttag">Figma</span>
+                            <span class="ttag">Miro</span>
+                        </div>
                     </div>
-                    <div class="bento-tile">
-                        <div class="bento-icon">🍳</div>
-                        <h4>Cooking</h4>
-                        <p>Iterative experiments: inputs, constraints, and repeatable outcomes.</p>
+                    <div>
+                        <p class="tools-group-label">Data &amp; Analytics</p>
+                        <div class="tools-tags">
+                            <span class="ttag">SQL</span>
+                            <span class="ttag">BigQuery</span>
+                            <span class="ttag">SQLMesh</span>
+                            <span class="ttag">Power BI</span>
+                            <span class="ttag">Looker</span>
+                            <span class="ttag">Datadog</span>
+                        </div>
                     </div>
-                    <div class="bento-tile">
-                        <div class="bento-icon">🤖</div>
-                        <h4>AI Agents</h4>
-                        <p>I prototype new models/agents and translate them into practical workflows.</p>
+                    <div>
+                        <p class="tools-group-label">AI &amp; Build</p>
+                        <div class="tools-tags">
+                            <span class="ttag">Claude Code</span>
+                            <span class="ttag">Cursor</span>
+                            <span class="ttag">LLM Workflows</span>
+                            <span class="ttag">Python</span>
+                            <span class="ttag">GitHub</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ===== CONNECT ===== -->
-            <section class="section" id="connect">
-                <h2 class="section-title">Let&rsquo;s Connect</h2>
-                <p class="hero-summary" style="max-width: 32rem;">
-                    Actively looking for Associate PM and PM roles in Germany. If you are building something and need
-                    someone who finds problems in data and turns them into shipped product, let's talk 😀.
-                </p>
+            <!-- TESTIMONIALS -->
+            <section class="section fade-up" id="testimonials">
+                <p class="sec-label">What People Say</p>
+                <div class="testimonial-strip">
+                    <div class="t-slide active">
+                        <div class="t-body">
+                            <p class="t-quote">"Uttam is always the first to step up — he anticipates needs and acts
+                                before being asked. That's rare."</p>
+                            <p class="t-name">Ann Merin Varghese</p>
+                            <p class="t-meta">IT Operations Engineer · Infosys</p>
+                        </div>
+                    </div>
+                    <div class="t-slide">
+                        <div class="t-body">
+                            <p class="t-quote">"Analytical ability and commitment to excellence. His research skills and
+                                critical thinking were particularly impressive."</p>
+                            <p class="t-name">Maitri Mishra</p>
+                            <p class="t-meta">Academic Peer</p>
+                        </div>
+                    </div>
+                    <div class="t-slide">
+                        <div class="t-body">
+                            <p class="t-quote">"Uttam sees the bigger picture and translates technical insights into
+                                strategic decisions — passion and precision together."</p>
+                            <p class="t-name">Anshdha Sharma</p>
+                            <p class="t-meta">Werkstudent @ CARIAD · MBA Peer</p>
+                        </div>
+                    </div>
+                    <div class="t-slide">
+                        <div class="t-body">
+                            <p class="t-quote">"He handles conflicting priorities in high-pressure situations without
+                                losing his cool. I recommend him without hesitation."</p>
+                            <p class="t-name">Mohammad Shadman</p>
+                            <p class="t-meta">Senior System Engineer · Infosys</p>
+                        </div>
+                    </div>
+                    <div class="t-dots" id="tDots">
+                        <button class="t-dot active" data-i="0"></button>
+                        <button class="t-dot" data-i="1"></button>
+                        <button class="t-dot" data-i="2"></button>
+                        <button class="t-dot" data-i="3"></button>
+                    </div>
+                </div>
             </section>
 
-        </div>
+            <!-- CONNECT -->
+            <section class="section fade-up" id="connect">
+                <div class="connect-card">
+                    <h3>Looking for Product Manager roles in Germany.</h3>
+                    <p>If you need someone who finds user problems in data and turns them into shipped product — let's
+                        talk.</p>
+                    <div class="connect-row">
+                        <a href="mailto:12uttamdarekar@gmail.com" class="btn-pri">✉ Email Me</a>
+                        <a href="https://www.linkedin.com/in/uttam-darekar/" target="_blank" rel="noopener"
+                            class="btn-sec">LinkedIn →</a>
+                    </div>
+                </div>
+            </section>
 
-    </main>
+        </div><!-- /col-right -->
+    </div><!-- /page -->
 
-
-
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 Uttam Darekar · Built with ♥ in Berlin</p>
+        <p>© 2025 Uttam Darekar · Berlin · Built with intention</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- CASE STUDY MODAL -->
+    <div id="cs-modal" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title" style="display:none">
+        <div id="cs-modal-backdrop"></div>
+        <div id="cs-modal-box">
+            <button id="cs-modal-close" aria-label="Close">&times;</button>
+            <h2 id="cs-modal-title"></h2>
+            <dl id="cs-modal-body"></dl>
+            <p id="cs-modal-note"></p>
+        </div>
+    </div>
+
     <script>
-        /* Admin Role Toggle */
-        const isAdmin = false; // Set to true to see "Add" buttons and empty sections
-        if (isAdmin) {
-            document.body.classList.add('is-admin');
-        }
+        /* Nav scroll */
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
 
-        /* Load saved content from localStorage */
-        (function () {
-            const STORAGE_KEY = 'uttam_page_content';
-            let items = [];
-            try { items = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { }
+        /* Hamburger */
+        const tog = document.getElementById('navToggle');
+        const nl = document.getElementById('navLinks');
+        tog.addEventListener('click', () => { tog.classList.toggle('open'); nl.classList.toggle('open'); });
+        nl.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => { tog.classList.remove('open'); nl.classList.remove('open'); }));
 
-            const sectionMap = {
-                'projects': 'projects',
-                'case-studies': 'case-studies', // Note: Case studies already has static HTML, but any dynamic ones added via edit will be injected
-                'blogs': 'blogs',
-                'achievements': 'achievements',
-                'outside-work': 'hobbies' // Hobbies from storage mapped to outside-work
-            };
+        /* Fade-up on scroll */
+        const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-            Object.keys(sectionMap).forEach((key) => {
-                const section = document.getElementById(key);
-                if (!section) return;
+        /* Show older experience */
+        const showBtn = document.getElementById('showMoreBtn');
+        const hiddenXp = document.getElementById('hiddenXp');
+        showBtn.addEventListener('click', () => {
+            const open = hiddenXp.classList.toggle('open');
+            showBtn.textContent = open ? 'Hide earlier experience ↑' : 'Show earlier experience ↓';
+        });
 
-                // For bento grid/proof grid/content grid
-                let grid = section.querySelector('.content-grid') || section.querySelector('.bento-grid');
-                if (!grid && key === 'case-studies') {
-                    grid = section.querySelector('.case-study-list');
-                }
-                if (!grid) return;
-
-                const sectionItems = items.filter((item) => item.section === sectionMap[key]);
-
-                // Hide section if empty (unless admin)
-                // Note: For case-studies and outside-work, there's always static HTML, so they aren't empty. 
-                // Only projects, blogs, achievements use empty-state dynamically here.
-                if (section.classList.contains('empty-state')) {
-                    if (sectionItems.length > 0) {
-                        section.classList.remove('empty-state');
-                    }
-                }
-
-                if (!sectionItems.length) return;
-
-                const addCard = grid.querySelector('.content-card--add');
-
-                sectionItems.forEach((item) => {
-                    const card = document.createElement('div');
-                    card.className = key === 'outside-work' ? 'bento-tile' : 'content-card';
-                    card.innerHTML = `
-            ${item.tag ? `<span class="content-card-tag">${escapeHtml(item.tag)}</span>` : ''}
-            <h3>${escapeHtml(item.title)}</h3>
-            ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ''}
-            ${item.link ? `<a href="${escapeHtml(item.link)}" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.5rem;font-size:0.78rem;color:var(--accent);text-decoration:underline;">View →</a>` : ''}
-          `;
-                    if (addCard) {
-                        grid.insertBefore(card, addCard);
-                    } else {
-                        grid.appendChild(card);
-                    }
-                });
-            });
-
-            function escapeHtml(text) {
-                const div = document.createElement('div');
-                div.textContent = text || '';
-                return div.innerHTML;
-            }
-        })();
-
-
-    </script>
-
-    <!-- Tab switcher logic -->
-    <script>
+        /* Portfolio tabs */
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                const tab = btn.dataset.tab;
-                const portfolio = document.getElementById('portfolio');
-
-                portfolio.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                portfolio.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
                 btn.classList.add('active');
-                document.getElementById('tab-' + tab).classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
             });
         });
-    </script>
 
-    <!-- Mobile scroll blur for background blobs -->
-    <script>
+        /* Testimonials carousel */
         (function () {
-            const MOBILE_MAX = 900;
-
-            function updateBlur() {
-                const isMobile = window.innerWidth <= MOBILE_MAX;
-                if (isMobile && window.scrollY > 10) {
-                    document.body.classList.add('scroll-blur');
-                } else {
-                    document.body.classList.remove('scroll-blur');
-                }
+            const slides = document.querySelectorAll('.t-slide');
+            const dots = document.querySelectorAll('#tDots .t-dot');
+            let cur = 0, timer;
+            function go(i) {
+                slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+                cur = (i + slides.length) % slides.length;
+                slides[cur].classList.add('active'); dots[cur].classList.add('active');
             }
-
-            window.addEventListener('scroll', updateBlur, { passive: true });
-            window.addEventListener('resize', updateBlur);
-            updateBlur();
+            dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }));
+            timer = setInterval(() => go(cur + 1), 5000);
         })();
-    </script>
 
-    <!-- Case Study Modal styles -->
-    <style>
-        .cs-view-btn {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            color: var(--accent);
-            text-decoration: underline;
-            font-size: 0.78rem;
-            font-family: inherit;
-        }
-        .cs-view-btn:hover { opacity: 0.8; }
-
-        #cs-modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.65);
-            backdrop-filter: blur(4px);
-            z-index: 999;
-        }
-        #cs-modal-box {
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            background: var(--card, #1e2535);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 1rem;
-            padding: 2rem 2.25rem 1.75rem;
-            max-width: 560px;
-            width: calc(100vw - 2rem);
-            max-height: 85vh;
-            overflow-y: auto;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-        }
-        #cs-modal-close {
-            position: absolute;
-            top: 1rem; right: 1.25rem;
-            background: none;
-            border: none;
-            color: var(--muted);
-            font-size: 1.5rem;
-            cursor: pointer;
-            line-height: 1;
-        }
-        #cs-modal-close:hover { color: var(--text); }
-        #cs-modal-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            padding-right: 1.5rem;
-            color: var(--text);
-        }
-        #cs-modal-body {
-            display: grid;
-            gap: 0.85rem;
-        }
-        #cs-modal-body dt {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 0.15rem;
-        }
-        #cs-modal-body dd {
-            margin: 0;
-            font-size: 0.88rem;
-            color: var(--text);
-            line-height: 1.6;
-        }
-        #cs-modal-note {
-            margin-top: 1.25rem;
-            font-size: 0.75rem;
-            color: var(--muted);
-            font-style: italic;
-        }
-    </style>
-
-    <!-- Case Study Modal logic -->
-    <script>
+        /* Case Study Modal */
         (function () {
-            const modal   = document.getElementById('cs-modal');
+            const modal = document.getElementById('cs-modal');
             const backdrop = document.getElementById('cs-modal-backdrop');
-            const box     = document.getElementById('cs-modal-box');
             const closeBtn = document.getElementById('cs-modal-close');
-            const titleEl  = document.getElementById('cs-modal-title');
-            const bodyEl   = document.getElementById('cs-modal-body');
-            const noteEl   = document.getElementById('cs-modal-note');
+            const titleEl = document.getElementById('cs-modal-title');
+            const bodyEl = document.getElementById('cs-modal-body');
+            const noteEl = document.getElementById('cs-modal-note');
 
-            function openModal(btn) {
+            function open(btn) {
                 titleEl.textContent = btn.dataset.title;
-                noteEl.textContent  = btn.dataset.note || '';
-                const rows = [
-                    ['Context',  btn.dataset.context],
-                    ['Problem',  btn.dataset.problem],
+                noteEl.textContent = btn.dataset.note || '';
+                bodyEl.innerHTML = [
+                    ['Context', btn.dataset.context],
+                    ['Problem', btn.dataset.problem],
                     ['Approach', btn.dataset.approach],
                     ['Expected Impact', btn.dataset.impact]
-                ];
-                bodyEl.innerHTML = rows.map(([label, text]) =>
-                    `<div><dt>${label}</dt><dd>${text}</dd></div>`
-                ).join('');
+                ].map(([l, t]) => `<div><dt>${l}</dt><dd>${t}</dd></div>`).join('');
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
                 closeBtn.focus();
             }
+            function close() { modal.style.display = 'none'; document.body.style.overflow = ''; }
 
-            function closeModal() {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            }
-
-            document.querySelectorAll('.cs-view-btn').forEach(btn => {
-                btn.addEventListener('click', () => openModal(btn));
-            });
-
-            closeBtn.addEventListener('click', closeModal);
-            backdrop.addEventListener('click', closeModal);
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape') closeModal();
-            });
+            document.querySelectorAll('.cs-btn').forEach(b => b.addEventListener('click', () => open(b)));
+            closeBtn.addEventListener('click', close);
+            backdrop.addEventListener('click', close);
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
         })();
     </script>
 
