@@ -6,9 +6,9 @@ html_content = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uttam Darekar — Data Product Manager</title>
+    <title>Uttam Darekar — Product Analyst | Breaking into PM</title>
     <meta name="description"
-        content="Uttam Darekar — Data Product Manager, Product Analytics based in Berlin, Germany." />
+        content="Uttam Darekar — Product Analyst breaking into PM, based in Berlin, Germany." />
     <link rel="icon" href="assets/images/page_icon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,7 +55,7 @@ html_content = """<!DOCTYPE html>
                     <img src="assets/images/profile.png" alt="Uttam Darekar" class="avatar" />
                 </div>
                 <h1 class="hero-name">Uttam Darekar</h1>
-                <p class="hero-role">Data Product Manager<br><span>Product Analytics</span></p>
+                <p class="hero-role">Product Analyst | Breaking into PM<br><span>Product Analytics</span></p>
                 <p class="hero-summary">I build trusted metrics, analytics products, and automation that turn data into decisions.</p>
                 <p class="hero-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -104,7 +104,7 @@ html_content = """<!DOCTYPE html>
                 <h2 class="section-title">Education</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-date">Expected Mar 2026</span>
+                        <span class="timeline-date">Expected Jun 2026</span>
                         <h3>MBA &amp; Engineering</h3>
                         <p class="timeline-org">HTW Berlin</p>
                     </div>
