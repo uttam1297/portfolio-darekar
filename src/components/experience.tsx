@@ -68,11 +68,11 @@ const earlier: Job[] = [
 
 function JobCard({ job }: { job: Job }) {
   return (
-    <Card className="transition-colors hover:border-indigo-500/40 hover:shadow-[0_2px_20px_rgba(99,102,241,0.08)]">
+    <Card className="transition-colors hover:border-amber-500/40 hover:shadow-[0_2px_20px_rgba(245,158,11,0.08)]">
       <CardContent className="p-4">
         <div className="flex justify-between items-start gap-2 flex-wrap mb-0.5">
           <span className="text-[0.92rem] font-bold">{job.company}</span>
-          <span className="text-[0.7rem] text-indigo-400 font-semibold uppercase tracking-wide whitespace-nowrap">
+          <span className="text-[0.7rem] text-amber-400 font-semibold uppercase tracking-wide whitespace-nowrap">
             {job.date}
           </span>
         </div>
@@ -85,7 +85,7 @@ function JobCard({ job }: { job: Job }) {
             {job.bullets.map((b, i) => (
               <li
                 key={i}
-                className="text-[0.78rem] text-muted-foreground leading-relaxed pl-3.5 relative before:content-[''] before:absolute before:left-0 before:top-[0.55em] before:w-1 before:h-1 before:rounded-full before:bg-indigo-500"
+                className="text-[0.78rem] text-muted-foreground leading-relaxed pl-3.5 relative before:content-[''] before:absolute before:left-0 before:top-[0.55em] before:w-1 before:h-1 before:rounded-full before:bg-amber-500"
               >
                 {b}
               </li>
@@ -97,7 +97,7 @@ function JobCard({ job }: { job: Job }) {
             {job.tags.map((t) => (
               <Badge
                 key={t}
-                className="bg-indigo-500/10 border-indigo-500/20 text-indigo-300 text-[0.65rem] font-semibold uppercase tracking-wide"
+                className="bg-amber-500/10 border-amber-500/20 text-amber-300 text-[0.65rem] font-semibold uppercase tracking-wide"
               >
                 {t}
               </Badge>
@@ -121,7 +121,7 @@ export function Experience() {
 
         <button
           onClick={() => setShowEarlier(!showEarlier)}
-          className="mt-1 py-2 px-4 text-[0.78rem] font-semibold text-indigo-400 bg-card border border-dashed border-border rounded-lg w-full transition-colors hover:border-indigo-500 hover:bg-indigo-500/5"
+          className="mt-1 py-2 px-4 text-[0.78rem] font-semibold text-amber-400 bg-card border border-dashed border-border rounded-lg w-full transition-colors hover:border-amber-500 hover:bg-amber-500/5"
         >
           {showEarlier
             ? "Hide earlier experience ↑"

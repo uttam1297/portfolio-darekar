@@ -13,11 +13,11 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-[52px] bg-[#0d1117]/80 backdrop-blur-xl border-b border-border">
+    <header className="fixed inset-x-0 top-0 z-50 h-[52px] bg-[#18181b]/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto max-w-[960px] h-full flex items-center justify-between px-5">
         <a
           href="#top"
-          className="font-extrabold text-indigo-400 tracking-wide"
+          className="font-extrabold text-amber-400 tracking-wide"
         >
           UD
         </a>
@@ -52,7 +52,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <nav className="sm:hidden bg-[#0d1117]/97 backdrop-blur-2xl border-b border-border px-5 py-3 flex flex-col gap-0.5">
+        <nav className="sm:hidden bg-[#18181b]/97 backdrop-blur-2xl border-b border-border px-5 py-3 flex flex-col gap-0.5">
           {links.map((l) => (
             <a
               key={l.href}

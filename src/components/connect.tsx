@@ -4,7 +4,7 @@ import { Section } from "@/components/section";
 export function Connect() {
   return (
     <Section id="connect" label="Connect">
-      <div className="bg-gradient-to-br from-indigo-500/15 to-indigo-500/5 border border-indigo-500/25 rounded-lg p-6">
+      <div className="bg-gradient-to-br from-amber-500/15 to-amber-500/5 border border-amber-500/25 rounded-lg p-6">
         <h3 className="text-base font-bold mb-1.5">
           Looking for Data Analyst roles in Germany.
         </h3>

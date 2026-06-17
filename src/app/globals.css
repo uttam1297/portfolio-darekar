@@ -47,37 +47,37 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --color-green: #10b981;
-  --color-indigo: #6366f1;
-  --color-indigo-light: #818cf8;
-  --color-navy: #0d1117;
-  --color-navy-light: #161b22;
-  --color-navy-border: #21262d;
+  --color-amber: #f59e0b;
+  --color-amber-light: #fbbf24;
+  --color-charcoal: #18181b;
+  --color-charcoal-light: #1f1f23;
+  --color-charcoal-border: #2a2a2e;
 }
 
 :root {
-  --background: #0d1117;
-  --foreground: #e6edf3;
-  --card: #161b22;
-  --card-foreground: #e6edf3;
-  --popover: #161b22;
-  --popover-foreground: #e6edf3;
-  --primary: #6366f1;
-  --primary-foreground: #ffffff;
-  --secondary: #161b22;
-  --secondary-foreground: #e6edf3;
-  --muted: #161b22;
-  --muted-foreground: #8b949e;
-  --accent: #161b22;
-  --accent-foreground: #e6edf3;
+  --background: #18181b;
+  --foreground: #e4e4e7;
+  --card: #1f1f23;
+  --card-foreground: #e4e4e7;
+  --popover: #1f1f23;
+  --popover-foreground: #e4e4e7;
+  --primary: #f59e0b;
+  --primary-foreground: #18181b;
+  --secondary: #1f1f23;
+  --secondary-foreground: #e4e4e7;
+  --muted: #1f1f23;
+  --muted-foreground: #a1a1aa;
+  --accent: #1f1f23;
+  --accent-foreground: #e4e4e7;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #21262d;
-  --input: #21262d;
-  --ring: #6366f1;
-  --chart-1: #6366f1;
+  --border: #2a2a2e;
+  --input: #2a2a2e;
+  --ring: #f59e0b;
+  --chart-1: #f59e0b;
   --chart-2: #10b981;
-  --chart-3: #818cf8;
-  --chart-4: #a5b4fc;
-  --chart-5: #f59e0b;
+  --chart-3: #fbbf24;
+  --chart-4: #fcd34d;
+  --chart-5: #6366f1;
   --radius: 0.75rem;
 }
 
@@ -88,8 +88,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(ellipse 70% 50% at 10% 0%, rgba(99,102,241,0.08) 0%, transparent 55%),
-      radial-gradient(ellipse 50% 40% at 90% 100%, rgba(16,185,129,0.05) 0%, transparent 55%);
+      radial-gradient(ellipse 70% 50% at 10% 0%, rgba(245,158,11,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 90% 100%, rgba(16,185,129,0.04) 0%, transparent 55%);
     background-attachment: fixed;
   }
   html {

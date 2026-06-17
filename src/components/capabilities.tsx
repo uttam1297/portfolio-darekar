@@ -31,7 +31,7 @@ export function Capabilities() {
         {caps.map((c) => (
           <Card
             key={c.title}
-            className="transition-all hover:border-indigo-500 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(99,102,241,0.2)] cursor-default"
+            className="transition-all hover:border-amber-500 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(245,158,11,0.2)] cursor-default"
           >
             <CardContent className="p-4">
               <div className="text-xl mb-2">{c.icon}</div>

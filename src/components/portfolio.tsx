@@ -135,9 +135,9 @@ function CaseStudyCard({
   onOpen: () => void;
 }) {
   return (
-    <Card className="transition-all hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg">
+    <Card className="transition-all hover:border-amber-500/40 hover:-translate-y-0.5 hover:shadow-lg">
       <CardContent className="p-4">
-        <Badge className="bg-indigo-500/10 border-indigo-500/20 text-indigo-400 text-[0.63rem] font-bold uppercase tracking-wider mb-2">
+        <Badge className="bg-amber-500/10 border-amber-500/20 text-amber-400 text-[0.63rem] font-bold uppercase tracking-wider mb-2">
           {cs.badge}
         </Badge>
         <h3 className="text-[0.88rem] font-bold mb-1.5">{cs.title}</h3>
@@ -152,7 +152,7 @@ function CaseStudyCard({
         </p>
         <button
           onClick={onOpen}
-          className="text-indigo-400 text-[0.75rem] font-semibold underline mt-2 hover:opacity-75 transition-opacity"
+          className="text-amber-400 text-[0.75rem] font-semibold underline mt-2 hover:opacity-75 transition-opacity"
         >
           View full case study →
         </button>
@@ -174,8 +174,8 @@ export function Portfolio() {
             onClick={() => setTab(t)}
             className={`text-[0.78rem] font-semibold px-3.5 py-1.5 rounded-full border transition-all ${
               tab === t
-                ? "bg-indigo-500 border-indigo-500 text-white"
-                : "border-border text-muted-foreground hover:border-indigo-500/40 hover:text-foreground"
+                ? "bg-amber-500 border-amber-500 text-white"
+                : "border-border text-muted-foreground hover:border-amber-500/40 hover:text-foreground"
             }`}
           >
             {t === "projects" ? "Projects" : "Case Studies"}
@@ -188,10 +188,10 @@ export function Portfolio() {
           {projects.map((p) => (
             <Card
               key={p.title}
-              className="transition-all hover:border-indigo-500/40 hover:-translate-y-0.5 hover:shadow-lg"
+              className="transition-all hover:border-amber-500/40 hover:-translate-y-0.5 hover:shadow-lg"
             >
               <CardContent className="p-4">
-                <Badge className="bg-indigo-500/10 border-indigo-500/20 text-indigo-400 text-[0.63rem] font-bold uppercase tracking-wider mb-2">
+                <Badge className="bg-amber-500/10 border-amber-500/20 text-amber-400 text-[0.63rem] font-bold uppercase tracking-wider mb-2">
                   {p.badge}
                 </Badge>
                 <h3 className="text-[0.88rem] font-bold mb-1.5">{p.title}</h3>
@@ -208,7 +208,7 @@ export function Portfolio() {
                   href={p.link}
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center gap-1 text-[0.75rem] font-semibold text-indigo-400 mt-2 hover:underline"
+                  className="inline-flex items-center gap-1 text-[0.75rem] font-semibold text-amber-400 mt-2 hover:underline"
                 >
                   {p.linkText}
                 </a>
@@ -248,7 +248,7 @@ export function Portfolio() {
                 ] as const
               ).map(([label, text]) => (
                 <div key={label}>
-                  <dt className="text-[0.65rem] uppercase tracking-wider text-indigo-400 font-bold mb-0.5">
+                  <dt className="text-[0.65rem] uppercase tracking-wider text-amber-400 font-bold mb-0.5">
                     {label}
                   </dt>
                   <dd className="text-[0.85rem] leading-relaxed">{text}</dd>

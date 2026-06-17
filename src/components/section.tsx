@@ -44,7 +44,7 @@ export function Section({
           : "opacity-0 translate-y-4"
       } ${className}`}
     >
-      <p className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-indigo-400 mb-3.5">
+      <p className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-amber-400 mb-3.5">
         {label}
       </p>
       {children}

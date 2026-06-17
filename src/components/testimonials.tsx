@@ -64,7 +64,7 @@ export function Testimonials() {
             onClick={() => setCur(i)}
             className={`w-1.5 h-1.5 rounded-full transition-all ${
               i === cur
-                ? "bg-indigo-500 scale-150"
+                ? "bg-amber-500 scale-150"
                 : "bg-border hover:bg-muted-foreground"
             }`}
           />

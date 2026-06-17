@@ -22,7 +22,7 @@ const certs = [
 export function Sidebar() {
   return (
     <aside className="md:sticky md:top-[calc(52px+1.5rem)]">
-      <div className="w-[88px] h-[88px] rounded-full p-[2.5px] bg-gradient-to-br from-indigo-500 to-indigo-300 shadow-[0_0_24px_rgba(99,102,241,0.2)] mb-4">
+      <div className="w-[88px] h-[88px] rounded-full p-[2.5px] bg-gradient-to-br from-amber-500 to-amber-300 shadow-[0_0_24px_rgba(245,158,11,0.2)] mb-4">
         <Image
           src="/profile.png"
           alt="Uttam"
@@ -43,7 +43,7 @@ export function Sidebar() {
         📍 Berlin, Germany
       </p>
 
-      <p className="text-[0.82rem] text-muted-foreground leading-relaxed mb-4 border-l-2 border-indigo-500 pl-3">
+      <p className="text-[0.82rem] text-muted-foreground leading-relaxed mb-4 border-l-2 border-amber-500 pl-3">
         I find patterns in customer data, build dashboards that get used, and
         ship AI tools on the side.
       </p>
@@ -64,7 +64,7 @@ export function Sidebar() {
         {kpis.map((k) => (
           <div
             key={k.label}
-            className="bg-card border border-border rounded-lg px-3 py-2.5 transition-colors hover:border-indigo-500"
+            className="bg-card border border-border rounded-lg px-3 py-2.5 transition-colors hover:border-amber-500"
           >
             <div className="text-xl font-extrabold text-green-500">
               {k.num}
@@ -96,7 +96,7 @@ export function Sidebar() {
       </div>
 
       <div className="mb-6">
-        <p className="text-[0.65rem] font-bold uppercase tracking-widest text-indigo-400 mb-2.5">
+        <p className="text-[0.65rem] font-bold uppercase tracking-widest text-amber-400 mb-2.5">
           Education
         </p>
         <div className="mb-2.5">
@@ -122,7 +122,7 @@ export function Sidebar() {
       </div>
 
       <div className="pt-4 border-t border-border">
-        <p className="text-[0.65rem] font-bold uppercase tracking-widest text-indigo-400 mb-2">
+        <p className="text-[0.65rem] font-bold uppercase tracking-widest text-amber-400 mb-2">
           Certifications
         </p>
         <div className="flex flex-wrap gap-1.5">
@@ -130,7 +130,7 @@ export function Sidebar() {
             <Badge
               key={c}
               variant="outline"
-              className="text-[0.7rem] text-muted-foreground font-normal hover:border-indigo-500 hover:text-foreground transition-colors"
+              className="text-[0.7rem] text-muted-foreground font-normal hover:border-amber-500 hover:text-foreground transition-colors"
             >
               {c}
             </Badge>
