@@ -1,140 +1,138 @@
-"use client";
-
-import { useState } from "react";
+import { ArrowDownRight, ChevronDown, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/section";
+import { jobs, type Job } from "@/data/experience";
+import { testimonials } from "@/data/testimonials";
 
-interface Job {
-  company: string;
-  date: string;
-  role: string;
-  impact: string;
-  bullets?: string[];
-  tags: string[];
+function Achievements({ bullets }: { bullets: string[] }) {
+  return (
+    <ul className="space-y-2">
+      {bullets.map((bullet) => (
+        <li
+          key={bullet}
+          className="flex gap-2.5 text-sm leading-6 text-muted-foreground"
+        >
+          <ArrowDownRight
+            aria-hidden="true"
+            className="mt-1 size-3.5 shrink-0 text-brand/70"
+          />
+          <span>{bullet}</span>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-const recent: Job[] = [
-  {
-    company: "Heartbeat AI (1KOMMA5°)",
-    date: "Jul 2025 – Present",
-    role: "Product Analyst (Working Student) · Berlin",
-    impact:
-      "Defined growth KPIs, built customer dashboards in SQL and Looker, evaluated AI agent accuracy across 4 European markets.",
-    bullets: [
-      "Defined 4 KPIs for the growth app. German referral data led leadership to expand the program into Sweden.",
-      "Built the Active Paying Customers dashboard covering 22K German sites against a €10M ARR target.",
-      "Cut customer data error rates from 35% to 18% across three European markets in five months.",
-    ],
-    tags: ["SQL", "Looker", "KPI Development", "Data Quality", "Amplitude"],
-  },
-  {
-    company: "Meyer Werft (Disney Cruise)",
-    date: "Feb – Mar 2025",
-    role: "Project Management Intern · Wismar",
-    impact:
-      "Reduced decision cycle time by 20% across 20+ engineering & logistics teams.",
-    bullets: [
-      "Managed milestone tracking and structured reporting during a complex delivery phase.",
-      "Proactively surfaced blockers before they became delays.",
-    ],
-    tags: ["Stakeholder Mgmt", "Delivery", "Cross-functional"],
-  },
-];
-
-const earlier: Job[] = [
-  {
-    company: "Infosys · ULTA Beauty",
-    date: "Nov 2021 – Sep 2024",
-    role: "Product Analyst · Bengaluru",
-    impact:
-      "Client-engineering interface for a loyalty platform serving 40M+ customers — from requirements to release.",
-    bullets: [
-      "Translated customer pain points and behaviour data into product recommendations and sprint specs.",
-      "Coordinated engineering and QA owned release quality and defect resolution.",
-      "Automated reporting, eliminating 35% of manual analyst work.",
-    ],
-    tags: ["Requirements", "UAT", "Agile", "Customer Insights"],
-  },
-  {
-    company: "Abacus Consultancy",
-    date: "Oct 2020 – Sep 2021",
-    role: "System Engineer · Indore",
-    impact:
-      "Translated client requirements into technical docs; reduced response time by 20%.",
-    tags: [],
-  },
-];
-
 function JobCard({ job }: { job: Job }) {
+  const visibleBullets = job.bullets.slice(0, 2);
+  const restBullets = [
+    ...job.bullets.slice(2),
+    ...(job.additionalBullets ?? []),
+  ];
+  const quotes = testimonials.filter((t) => t.roleId === job.id);
+
   return (
-    <Card className="transition-colors hover:border-amber-500/40 hover:shadow-[0_2px_20px_rgba(245,158,11,0.08)]">
-      <CardContent className="p-4">
-        <div className="flex justify-between items-start gap-2 flex-wrap mb-0.5">
-          <span className="text-[0.92rem] font-bold">{job.company}</span>
-          <span className="text-[0.7rem] text-amber-400 font-semibold uppercase tracking-wide whitespace-nowrap">
-            {job.date}
-          </span>
-        </div>
-        <p className="text-[0.78rem] text-muted-foreground mb-2">{job.role}</p>
-        <p className="text-[0.82rem] font-semibold leading-relaxed mb-2.5">
-          {job.impact}
-        </p>
-        {job.bullets && (
-          <ul className="space-y-1 mb-2.5">
-            {job.bullets.map((b, i) => (
-              <li
-                key={i}
-                className="text-[0.78rem] text-muted-foreground leading-relaxed pl-3.5 relative before:content-[''] before:absolute before:left-0 before:top-[0.55em] before:w-1 before:h-1 before:rounded-full before:bg-amber-500"
-              >
-                {b}
-              </li>
-            ))}
-          </ul>
-        )}
-        {job.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            {job.tags.map((t) => (
-              <Badge
-                key={t}
-                className="bg-amber-500/10 border-amber-500/20 text-amber-300 text-[0.65rem] font-semibold uppercase tracking-wide"
-              >
-                {t}
-              </Badge>
-            ))}
+    <article id={job.id} aria-labelledby={`${job.id}-title`} className="scroll-mt-20">
+      <Card
+        className={`surface-card h-full py-0 ${job.current ? "border-brand/20" : ""}`}
+      >
+        <CardContent className="flex h-full flex-col p-4">
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-medium tracking-wide text-muted-foreground">
+              {job.date}
+            </p>
+            {job.current && (
+              <span className="flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-widest text-brand">
+                <span className="size-1.5 rounded-full bg-brand" />
+                Current
+              </span>
+            )}
           </div>
-        )}
-      </CardContent>
-    </Card>
+          <h3
+            id={`${job.id}-title`}
+            className="text-base font-semibold tracking-tight"
+          >
+            {job.company}
+          </h3>
+          <p className="mt-0.5 text-sm text-foreground/90">{job.role}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {job.location}
+          </p>
+          {job.client && (
+            <p className="mt-2 text-xs font-medium text-brand">
+              {job.client}
+            </p>
+          )}
+          {job.impact && (
+            <p className="my-2.5 border-l-2 border-brand/50 pl-3 text-sm font-medium leading-6">
+              {job.impact}
+            </p>
+          )}
+          {visibleBullets.length > 0 && (
+            <Achievements bullets={visibleBullets} />
+          )}
+          {restBullets.length > 0 && (
+            <details className="group mt-1 border-t border-border pt-1">
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded text-xs font-medium text-brand [&::-webkit-details-marker]:hidden">
+                Show more
+                <ChevronDown
+                  aria-hidden="true"
+                  className="size-4 transition-transform group-open:rotate-180"
+                />
+              </summary>
+              <div className="pb-1 pt-2">
+                <Achievements bullets={restBullets} />
+              </div>
+            </details>
+          )}
+          {job.tags.length > 0 && (
+            <div
+              className="mt-3 flex flex-wrap gap-1.5 border-t border-border pt-3"
+              aria-label="Tools used"
+            >
+              {job.tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="outline"
+                  className="h-auto max-w-full whitespace-normal rounded-md px-2 py-1 text-[0.65rem] font-normal text-muted-foreground"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
+          {quotes.map((t) => (
+            <blockquote
+              key={t.name}
+              className="mt-3 flex gap-2 border-t border-border pt-3 text-xs italic leading-6 text-muted-foreground"
+            >
+              <Quote
+                aria-hidden="true"
+                className="mt-0.5 size-3.5 shrink-0 text-brand/70"
+              />
+              <p>
+                “{t.quote}” <span className="not-italic">— {t.name}</span>
+              </p>
+            </blockquote>
+          ))}
+        </CardContent>
+      </Card>
+    </article>
   );
 }
 
 export function Experience() {
-  const [showEarlier, setShowEarlier] = useState(false);
-
   return (
-    <Section id="experience" label="Experience" first>
-      <div className="flex flex-col gap-3">
-        {recent.map((j) => (
-          <JobCard key={j.company} job={j} />
+    <Section
+      id="experience"
+      label="Experience"
+      description="Customer data. Clear decisions. Measurable impact."
+    >
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {jobs.map((job) => (
+          <JobCard key={job.id} job={job} />
         ))}
-
-        <button
-          onClick={() => setShowEarlier(!showEarlier)}
-          className="mt-1 py-2 px-4 text-[0.78rem] font-semibold text-amber-400 bg-card border border-dashed border-border rounded-lg w-full transition-colors hover:border-amber-500 hover:bg-amber-500/5"
-        >
-          {showEarlier
-            ? "Hide earlier experience ↑"
-            : "Show earlier experience ↓"}
-        </button>
-
-        {showEarlier && (
-          <div className="flex flex-col gap-3 mt-1">
-            {earlier.map((j) => (
-              <JobCard key={j.company} job={j} />
-            ))}
-          </div>
-        )}
       </div>
     </Section>
   );

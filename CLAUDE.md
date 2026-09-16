@@ -1,36 +1,14 @@
-# CLAUDE.md
+# Repository guidance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This is a Next.js App Router portfolio, not the former static HTML site.
+Read `README.md` for development commands and the content map.
 
-## What this is
-
-Static single-page personal portfolio for Uttam Darekar. No build system, no framework, no package manager — just HTML, CSS, and JS served directly.
-
-## Development
-
-Open `index.html` in a browser directly, or use any static file server:
-
-```bash
-python3 -m http.server 8080
-# then open http://localhost:8080
-```
-
-No build, lint, or test commands exist.
-
-## Architecture
-
-**Active files:**
-- `index.html` — the entire site. All visible content, structure, and JavaScript logic live here (nav scroll/hamburger, fade-in observer, show-more toggle, portfolio tabs, testimonial carousel, case study modal).
-- `style.css` — the active stylesheet, linked as `style.css?v=5`. Two-column sticky layout, deep navy theme (`--bg: #0d1117`), Inter font, accent `#6366f1`.
-
-**Legacy / unused files:**
-- `assets/css/style.css` — an older, longer stylesheet from a previous layout. Not referenced by `index.html`.
-- `assets/js/script.js` and root `script.js` — older JS from prior versions. Not referenced by `index.html`; all JS is now inline.
-- `fix_css.py`, `fix_html_css.py`, `update_layout.py`, `update_my_site.py` — one-off migration scripts from past redesigns. Not part of the active workflow.
-- `edit.html` — a helper page for content editing, not linked from the main site.
-
-**Layout:**
-The page uses a two-column CSS grid: `.col-left` (sticky sidebar with bio, KPIs, education, certs) and `.col-right` (scrollable main content: Experience, Portfolio, Capabilities, Tools, Testimonials, Connect). Below `~768px` the layout collapses to single column.
-
-**Case study modal:**
-Case study data (title, context, problem, approach, impact) is stored entirely in `data-*` attributes on `.cs-btn` buttons inside `index.html`. The modal JS reads these attributes to populate `#cs-modal-box`.
+- Refactor the existing components in place.
+- Preserve verified metrics, dates, and job titles.
+- Keep all four roles visible by default, including Infosys Ltd.
+- Keep the complete supplied achievement pool in `src/data/experience.ts`.
+- Label scenario-based project impacts as expected outcomes.
+- Use Tailwind theme tokens and existing shadcn/Base UI primitives.
+- Preserve keyboard access, visible focus, reduced-motion support, and mobile layouts.
+- Run `npm run lint` and `npm run build` after application changes.
+- `assets/` is legacy and is not part of the active application.

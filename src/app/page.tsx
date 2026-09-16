@@ -1,33 +1,36 @@
 import { Sidebar } from "@/components/sidebar";
 import { Experience } from "@/components/experience";
 import { Portfolio } from "@/components/portfolio";
-import { Capabilities } from "@/components/capabilities";
-import { Tools } from "@/components/tools";
-import { Testimonials } from "@/components/testimonials";
 import { Connect } from "@/components/connect";
 import { Navbar } from "@/components/navbar";
+import { SlideNav } from "@/components/slide-nav";
 
 export default function Home() {
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <Navbar />
-      <div
-        id="top"
-        className="mx-auto max-w-[960px] px-5 pt-[calc(52px+2rem)] pb-8 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-0 md:gap-12 items-start"
+      <SlideNav />
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="h-dvh snap-y snap-mandatory overflow-y-auto scroll-smooth focus:outline-none"
       >
-        <Sidebar />
-        <div className="flex flex-col">
-          <Experience />
-          <Portfolio />
-          <Capabilities />
-          <Tools />
-          <Testimonials />
-          <Connect />
-        </div>
-      </div>
-      <footer className="text-center py-5 text-xs text-muted-foreground">
-        © 2025 Uttam Darekar · Berlin · Built with intention
-      </footer>
+        <section
+          id="top"
+          data-slide
+          className="flex h-dvh min-h-dvh snap-start flex-col justify-center overflow-y-auto px-5 pb-8 pt-24 sm:px-8 sm:pt-28"
+        >
+          <div className="mx-auto w-full max-w-[1160px]">
+            <Sidebar />
+          </div>
+        </section>
+        <Portfolio />
+        <Experience />
+        <Connect />
+      </main>
     </>
   );
 }
