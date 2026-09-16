@@ -1,53 +1,59 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { duration, easeEmphasized } from "@/lib/motion";
 
 export function Section({
   id,
   label,
   children,
-  className = "",
-  first = false,
+  className,
+  description,
+  compact = false,
 }: {
   id: string;
   label: string;
   children: React.ReactNode;
   className?: string;
-  first?: boolean;
+  description?: string;
+  compact?: boolean;
 }) {
-  const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setVisible(true);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0, rootMargin: "0px 0px 50px 0px" }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
-      ref={ref}
       id={id}
-      className={`py-9 ${first ? "" : "border-t border-border"} transition-all duration-500 ease-out ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-4"
-      } ${className}`}
+      data-slide
+      aria-labelledby={`${id}-heading`}
+      className={cn(
+        "flex snap-start flex-col justify-start overflow-y-auto scroll-mt-0 px-5 pb-8 pt-24 sm:px-8 sm:pt-28",
+        compact ? "min-h-fit" : "h-dvh min-h-dvh",
+        className,
+      )}
     >
-      <p className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-amber-400 mb-3.5">
-        {label}
-      </p>
-      {children}
+      <motion.div
+        className="mx-auto w-full max-w-[1160px]"
+        initial={reduceMotion ? undefined : { opacity: 0, y: 20 }}
+        whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: duration.slow, ease: easeEmphasized }}
+      >
+        <div className="mb-4">
+          <h2
+            id={`${id}-heading`}
+            className="font-heading text-lg font-semibold tracking-tight"
+          >
+            {label}
+          </h2>
+          {description && (
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {description}
+            </p>
+          )}
+        </div>
+        {children}
+      </motion.div>
     </section>
   );
 }

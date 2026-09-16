@@ -1,33 +1,43 @@
+import { ArrowUpRight, Mail } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Section } from "@/components/section";
 
 export function Connect() {
   return (
-    <Section id="connect" label="Connect">
-      <div className="bg-gradient-to-br from-amber-500/15 to-amber-500/5 border border-amber-500/25 rounded-lg p-6">
-        <h3 className="text-base font-bold mb-1.5">
-          Looking for Data Analyst roles in Germany.
-        </h3>
-        <p className="text-[0.82rem] text-muted-foreground leading-relaxed mb-4">
-          If you need someone who digs into customer data and makes it useful for
-          decisions, let&apos;s talk.
+    <Section id="connect" label="Connect" compact>
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-border px-5 py-4">
+        <p className="text-sm text-foreground/90">
+          Looking for Product &amp; Data Analyst roles in Germany.
         </p>
-        <div className="flex gap-2.5 flex-wrap">
+        <div className="flex flex-wrap gap-2">
           <a
             href="mailto:12uttamdarekar@gmail.com"
-            className={buttonVariants({ size: "sm" })}
+            className={buttonVariants({ className: "min-h-11 px-4" })}
           >
-            ✉ Email Me
+            <Mail aria-hidden="true" />
+            Email me
           </a>
           <a
             href="https://www.linkedin.com/in/uttam-darekar/"
             target="_blank"
-            rel="noopener"
-            className={buttonVariants({ variant: "outline", size: "sm" })}
+            rel="noopener noreferrer"
+            className={buttonVariants({
+              variant: "outline",
+              className: "min-h-11 px-4",
+            })}
           >
-            LinkedIn →
+            LinkedIn <ArrowUpRight aria-hidden="true" />
           </a>
         </div>
+      </div>
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+        <p>© {new Date().getFullYear()} Uttam Darekar · Berlin</p>
+        <a
+          href="#top"
+          className="inline-flex min-h-11 items-center gap-2 hover:text-foreground"
+        >
+          Back to top ↑
+        </a>
       </div>
     </Section>
   );

@@ -1,142 +1,112 @@
 import Image from "next/image";
+import { ArrowDownRight, ArrowUpRight, MapPin, Quote } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Mail } from "lucide-react";
+import { kpis } from "@/data/profile";
+import { testimonials } from "@/data/testimonials";
+import { KpiCounter } from "@/components/kpi-counter";
+import { DataFlowGraphic } from "@/components/data-flow-graphic";
 
-const kpis = [
-  { num: "4", label: "European Markets" },
-  { num: "4+", label: "Years Exp." },
-  { num: "40M+", label: "Customers Analysed" },
-  { num: "35%", label: "Work Eliminated" },
-];
-
-const certs = [
-  "IBM AI Product Manager",
-  "Google BI",
-  "Google Data Analytics",
-  "Agile Product Dev.",
-  "PM Foundation",
-  "AI Evaluations",
-];
+const peerQuotes = testimonials.filter((t) => !t.roleId);
 
 export function Sidebar() {
   return (
-    <aside className="md:sticky md:top-[calc(52px+1.5rem)]">
-      <div className="w-[88px] h-[88px] rounded-full p-[2.5px] bg-gradient-to-br from-zinc-400 to-zinc-600 shadow-[0_0_24px_rgba(161,161,170,0.15)] mb-4">
-        <Image
-          src="/profile.png"
-          alt="Uttam"
-          width={88}
-          height={88}
-          className="rounded-full object-cover border-[3px] border-[#0d1117]"
-          priority
-        />
-      </div>
-
-      <h1 className="text-xl font-extrabold tracking-tight mb-0.5">
-        Uttam Darekar
-      </h1>
-      <p className="text-[0.8rem] text-muted-foreground mb-0.5">
-        Data Analyst · Energy &amp; B2C
-      </p>
-      <p className="text-[0.78rem] text-muted-foreground mb-4">
-        📍 Berlin, Germany
-      </p>
-
-      <p className="text-[0.82rem] text-muted-foreground leading-relaxed mb-4 border-l-2 border-zinc-500 pl-3">
-        I find patterns in customer data, build dashboards that get used, and
-        ship AI tools on the side.
-      </p>
-
-      <div className="flex gap-2 mb-5">
-        <a href="#connect" className={buttonVariants({ size: "sm" })}>
-          Get in Touch
-        </a>
-        <a
-          href="#portfolio"
-          className={buttonVariants({ variant: "outline", size: "sm" })}
-        >
-          View Work →
-        </a>
-      </div>
-
-      <div className="grid grid-cols-2 gap-2 mb-5">
-        {kpis.map((k) => (
-          <div
-            key={k.label}
-            className="bg-card border border-border rounded-lg px-3 py-2.5 transition-colors hover:border-zinc-500"
+    <aside
+      className="profile-sidebar lg:grid lg:grid-cols-[1fr_320px] lg:items-center lg:gap-16"
+      aria-label="Profile"
+    >
+      <div className="min-w-0">
+        <div className="mb-4">
+          <div className="rounded-full border border-border p-1 w-fit">
+            <Image
+              src="/profile.png"
+              alt="Uttam Darekar"
+              width={72}
+              height={72}
+              className="size-[72px] rounded-full object-cover"
+              priority
+            />
+          </div>
+        </div>
+        <p className="eyebrow mb-2 text-brand">
+          Product &amp; Data Analyst, AI Solutions
+        </p>
+        <h1 className="font-heading text-[2.6rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-[3.2rem]">
+          Uttam Darekar<span className="text-brand">.</span>
+        </h1>
+        <p className="mb-3 mt-2 flex items-center gap-1.5 text-xs text-muted-foreground">
+          <MapPin aria-hidden="true" className="size-3.5" />
+          Berlin, Germany
+        </p>
+        <p className="max-w-md text-[0.94rem] leading-7 text-muted-foreground">
+          I find patterns in customer data, build dashboards that get used,
+          and ship AI tools on the side.
+        </p>
+        <div className="mb-6 mt-4 flex flex-wrap gap-2">
+          <a
+            href="#connect"
+            className={buttonVariants({ className: "min-h-11 px-4" })}
           >
-            <div className="text-xl font-extrabold text-green-500">
-              {k.num}
-            </div>
-            <div className="text-[0.63rem] text-muted-foreground font-medium uppercase tracking-wide">
+            Get in touch <ArrowUpRight aria-hidden="true" />
+          </a>
+          <a
+            href="#portfolio"
+            className={buttonVariants({
+              variant: "outline",
+              className: "min-h-11 px-4",
+            })}
+          >
+            View work <ArrowDownRight aria-hidden="true" />
+          </a>
+        </div>
+        <DataFlowGraphic className="mb-6 h-auto w-full max-w-[220px] text-muted-foreground/70 lg:hidden" />
+        <p className="mb-4 flex flex-wrap gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
+          {kpis.map((k, i) => (
+            <span key={k.label} className="whitespace-nowrap">
+              <span className="font-medium text-foreground/90">
+                <KpiCounter value={k.num} />
+              </span>{" "}
               {k.label}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex flex-col gap-1.5 mb-6">
-        <a
-          href="mailto:12uttamdarekar@gmail.com"
-          className="flex items-center gap-2 text-[0.8rem] text-muted-foreground px-2.5 py-1.5 rounded-lg transition-colors hover:text-foreground hover:bg-card"
-        >
-          <Mail className="w-3.5 h-3.5 shrink-0" />
-          12uttamdarekar@gmail.com
-        </a>
-        <a
-          href="https://www.linkedin.com/in/uttam-darekar/"
-          target="_blank"
-          rel="noopener"
-          className="flex items-center gap-2 text-[0.8rem] text-muted-foreground px-2.5 py-1.5 rounded-lg transition-colors hover:text-foreground hover:bg-card"
-        >
-          <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 10.268h-3v-4.5c0-1.074-.021-2.455-1.496-2.455-1.498 0-1.727 1.17-1.727 2.378v4.577h-3v-9h2.881v1.233h.041c.401-.762 1.379-1.566 2.839-1.566 3.036 0 3.595 2 3.595 4.6v4.733z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-
-      <div className="mb-6">
-        <p className="text-[0.65rem] font-bold uppercase tracking-widest text-amber-400 mb-2.5">
-          Education
-        </p>
-        <div className="mb-2.5">
-          <div className="text-[0.8rem] font-semibold">
-            MBA &amp; Engineering
-          </div>
-          <div className="text-[0.75rem] text-muted-foreground">
-            HTW Berlin
-          </div>
-          <div className="text-[0.7rem] text-muted-foreground">Jun 2026</div>
-        </div>
-        <div>
-          <div className="text-[0.8rem] font-semibold">
-            B.Eng. Electronics &amp; Comm.
-          </div>
-          <div className="text-[0.75rem] text-muted-foreground">
-            Acropolis Technical Campus
-          </div>
-          <div className="text-[0.7rem] text-muted-foreground">
-            2016 – 2020
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-4 border-t border-border">
-        <p className="text-[0.65rem] font-bold uppercase tracking-widest text-amber-400 mb-2">
-          Certifications
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {certs.map((c) => (
-            <Badge
-              key={c}
-              variant="outline"
-              className="text-[0.7rem] text-muted-foreground font-normal hover:border-zinc-500 hover:text-foreground transition-colors"
-            >
-              {c}
-            </Badge>
+              {i < kpis.length - 1 && <span className="ml-1.5">·</span>}
+            </span>
           ))}
+        </p>
+        <div className="grid gap-x-8 gap-y-4 border-t border-border pt-4 text-xs leading-5 text-muted-foreground sm:grid-cols-2">
+          <p>
+            <span className="font-medium text-foreground/90">
+              MBA &amp; Engineering
+            </span>{" "}
+            — HTW Berlin, expected Sep. 2026
+          </p>
+          <p>
+            <span className="font-medium text-foreground/90">
+              B.Eng. Electronics &amp; Comm.
+            </span>{" "}
+            — Acropolis Technical Campus, 2016–2020
+          </p>
         </div>
+        {peerQuotes.length > 0 && (
+          <div className="mt-4 grid gap-x-8 gap-y-2 border-t border-border pt-4 sm:grid-cols-2">
+            {peerQuotes.map((t) => (
+              <p
+                key={t.name}
+                className="flex gap-1.5 text-xs italic leading-6 text-muted-foreground"
+              >
+                <Quote
+                  aria-hidden="true"
+                  className="mt-0.5 size-3 shrink-0 text-brand/70"
+                />
+                <span>
+                  “{t.quote}”{" "}
+                  <span className="not-italic">
+                    — {t.name}, {t.meta}
+                  </span>
+                </span>
+              </p>
+            ))}
+          </div>
+        )}
       </div>
+      <DataFlowGraphic className="hidden h-auto w-full text-muted-foreground/70 lg:block" />
     </aside>
   );
 }
